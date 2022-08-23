@@ -1,0 +1,51 @@
+.why-text {
+    height: 280px;
+    padding-top: 20px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+.why-text p {
+    text-align: center;
+    margin: 30px 600px 0 600px;
+    padding-bottom: 30px;
+    font-size: 19px;
+}
+
+.carousel {
+    height: 800px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    background-color: black;
+}
+
+.carousel-item img {
+   opacity: 0.35;
+}
+
+.carousel-caption {
+    bottom: 700px!important;
+}
+
+.carousel-caption h1 {
+    font-size: 70px;
+}
+
+.carousel-caption p {
+    font-size: 30px;
+}
+
+.row#cards {
+ justify-content: center;
+ padding-top: 20px;
+ margin-bottom: 30px;
+}
+
+.card {
+    
+    margin-inline: 25px;
+}
