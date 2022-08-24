@@ -1,0 +1,57 @@
+.options-side,
+.payment-side {
+  height: 1000px;
+  width: 50%;
+  overflow: hidden;
+}
+
+.options-side {
+  background-color: black;
+  float: left;
+}
+
+.options-side img {
+  min-width: 100%;
+  opacity: 0.45;
+}
+
+.texts {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 6%;
+  color: white;
+}
+
+.texts p {
+  font-weight: 700;
+}
+
+.payment-container {
+  padding-top: 350px;
+}
+
+.payment-side {
+  background: rgb(2,0,36);
+background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgba(15,171,168,1) 0%, rgba(0,204,255,1) 83%);
+}
+
+.payment-side input {
+  display: block;
+  margin: 20px auto;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+.Payment {
+  height: 100%;
+  align-items: center;
+}
+
+form button {
+  margin-left: 440px;
+}

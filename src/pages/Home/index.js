@@ -21,7 +21,7 @@ function Home() {
             <Carousel.Caption>
               <h1>Support A Child's Education</h1>
               <p>Quality Education is every child's right.</p>
-              <Button variant="primary" size="lg">
+              <Button href="/donate" variant="primary" size="lg">
                 Support a Child
               </Button>
             </Carousel.Caption>
@@ -36,7 +36,7 @@ function Home() {
             <Carousel.Caption>
               <h1>Join Us to Help</h1>
               <p>Volunteer and help children to get them quality education.</p>
-              <Button variant="primary" size="lg">
+              <Button href="/join" variant="primary" size="lg">
                 Join Us
               </Button>
             </Carousel.Caption>
@@ -65,11 +65,11 @@ function Home() {
             src={require("../../images/students2.jpg")}
              />
             <Card.Body>
-              <Card.Title>School Suplies</Card.Title>
+              <Card.Title>School Supplies</Card.Title>
               <Card.Text>
                 Giving stationery items to the children who lacks having it to study.
               </Card.Text>
-              <Button variant="primary">Donate</Button>
+              <Button href="/donate" variant="primary">Donate</Button>
             </Card.Body>
           </Card>
 
@@ -83,7 +83,7 @@ function Home() {
               <Card.Text>
                 Our voluntarily teachers gives education to the children who cannot afford schools.
               </Card.Text>
-              <Button variant="primary">Join Us</Button>
+              <Button href="/join" variant="primary">Join Us</Button>
             </Card.Body>
           </Card>
         </div>
