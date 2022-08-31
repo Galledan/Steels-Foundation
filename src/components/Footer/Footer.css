@@ -18,12 +18,20 @@
 .footer-container li {
     display: inline;
     margin: 10px;
+    font-family: 'Montserrat';
+    
 }
 
-li:hover {
-  color: red;
+.footer-container li:hover {
+  color: rgb(0, 110, 255);
 }
 
-p {
+.main-footer i {
+  text-align: center;
+
+}
+  
+
+.main-footer p {
 text-align: center;
 }

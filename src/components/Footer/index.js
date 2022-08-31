@@ -9,16 +9,16 @@ function Footer() {
             <div className='row'>
                 <div className='col'>
                     <ul className='list-unstyled'>
-                        <li><i class="fab fa-twitter"></i></li>
-                        <li><i class="fab fa-facebook"></i></li>
-                        <li><i class="fab fa-instagram"></i></li>
-                        <li><i class="fab fa-youtube"></i></li>
+                        <li><i class="fab fa-twitter fa"></i></li>
+                        <li><i class="fab fa-facebook fa"></i></li>
+                        <li><i class="fab fa-instagram fa"></i></li>
+                        <li><i class="fab fa-youtube fa"></i></li>
                     
                     </ul>
                 </div>
                 <div className='col'>
                     <ul className='list-unstyled'>
-                        <li><i class="fas fa-envelope"> info@steels.com</i></li>
+                        <li><i class="fas fa-envelope"></i> info@steels.com</li>
                         <li><i class="fas fa-phone"></i> +90 505 333 90 31</li>
                     </ul>
                 

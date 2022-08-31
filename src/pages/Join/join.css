@@ -1,15 +1,33 @@
 .Join {
     background: rgb(2,0,36);
-background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgba(15,171,168,1) 0%, rgba(0,204,255,1) 83%);
+    background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 83%);
+}
+
+.join-container h1{
+    position: absolute;
+    width: 500px;
+    font-size: 50px;
+    top: 21%;
+    left: 100px;
+    color: rgb(143, 169, 255);
+}
+
+.join-container p{
+    position: absolute;
+    font-size: 20px;
+    width: 500px;
+    top: 28%;
+    left: 100px;
+    color: white;
 }
 
 .form-container {
     position: absolute;
     color: black;
     top: 15%;
-    left: 32%;
-    background-color: white;
-    border-radius: 8px;
+    left: 52%;
+    background-color: rgba(255, 255, 255, 0.39);
+    border-radius: 5px;
     padding: 20px;
 }
 
@@ -18,6 +36,32 @@ background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgba(15,171,168,1) 0%, rg
     opacity: 0.65;
 }
 
-.Join button {
-    margin: 20px 0 0 270px  ;
+.form-container h3::after{
+    content: '';
+    height: 3px;
+    width: 30px;
+    background: #0573f0;
+    position: absolute;
+    top: 9%;
+left: 3%;
+    
+}
+
+.form-container .form-control {
+    box-shadow: 1px 1px ;
+}
+
+
+
+.Join.row{
+    margin: 10px auto;
+}
+
+.form-container button {
+    margin: 1em auto 2em;
+    padding-inline: 300px;
+}
+
+.form-container .form-label {
+    font-weight: 600;
 }
