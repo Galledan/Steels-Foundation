@@ -5,9 +5,15 @@ import Navbar from "react-bootstrap/Navbar";
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="xl" fixed="top">
+    <Navbar bg='dark' variant="dark" expand="xl" fixed="top">
       <Container>
-        <Navbar.Brand href="/">Steels Foundation</Navbar.Brand>
+        <Navbar.Brand href="/"><img
+              src={require("../../images/logo.jpg")}
+              width="50"
+              height="50"
+              className="d-inline-block align-top"
+              alt="Steels Foundation"
+            /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>

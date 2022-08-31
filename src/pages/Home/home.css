@@ -1,17 +1,6 @@
-.why-text {
-    height: 280px;
-    padding-top: 20px;
-}
-
-h1 {
-    display: flex;
-    justify-content: center;
-}
-.why-text p {
-    text-align: center;
-    margin: 30px 600px 0 600px;
-    padding-bottom: 30px;
-    font-size: 19px;
+.Home {
+    background: rgb(2,0,36);
+  background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.164) 83%);
 }
 
 .carousel {
@@ -39,13 +28,97 @@ h1 {
     font-size: 30px;
 }
 
-.row#cards {
- justify-content: center;
- padding-top: 20px;
- margin-bottom: 30px;
+
+.why-text {
+    height: 650px;
+    padding-top: 20px;
 }
 
-.card {
-    
-    margin-inline: 25px;
+.why-text h1 {
+    padding-top: 120px;
+    padding-left: 140px;
+    border-bottom: 2px black;
 }
+
+.why-text p {
+    margin: 50px 1130px 0 240px;
+    font-size: 19px;
+}
+
+.why-text img {
+    position: absolute;
+    top: 840px;
+    left: 950px;
+    border-radius: 8px;
+}
+
+.supply-container, .edu-container, .spo-container {
+    height: 500px;
+    width: 100%;
+}
+
+.supply-container{
+    background-image: url('../../images/students2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 20%;
+    background-color: rgba(0, 0, 0, 0.699);
+    background-blend-mode:hue;
+}
+
+.supply-container p{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding-right: 900px;
+    margin-left: 100px;
+    padding-top: 140px;
+}
+
+.supply-container .btn {
+    position: absolute;
+    top: 175%;
+    left: 75%;
+    
+}
+
+.edu-container{
+    background-image: url('../../images/teachers2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 20%;
+    background-color: rgba(138, 138, 138, 0.699);
+    background-blend-mode:hue;
+}
+
+.edu-container p{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding-left: 900px;
+    margin-right: 100px;
+    padding-top: 140px;
+}
+
+.edu-container .btn {
+    position: absolute;
+    top: 228%;
+    right: 75%;
+    
+}
+
+.spo-container {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.spo-container img{
+    margin-top: 60px;
+    margin-inline: 40px ;
+}
+
+.spo-container img:hover{
+    padding-top: 15px;
+
+}
+

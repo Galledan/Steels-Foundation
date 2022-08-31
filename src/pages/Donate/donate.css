@@ -1,21 +1,24 @@
+.Donate {
+  background: rgb(2,0,36);
+  background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.164) 83%);
+}
+
 .options-side,
-.payment-side {
+.info-side {
   height: 1000px;
   width: 50%;
   overflow: hidden;
 }
 
 .options-side {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.699);
+  background-size: cover;
+  background-image: url("../../images/students3.jpg");
   float: left;
+  background-blend-mode:hue;
 }
 
-.options-side img {
-  min-width: 100%;
-  opacity: 0.45;
-}
-
-.texts {
+.options-side h1 {
   position: absolute;
   text-align: center;
   top: 50%;
@@ -23,35 +26,27 @@
   color: white;
 }
 
-.texts p {
-  font-weight: 700;
+.info-container {
+  position: absolute;
+  color: black;
+  top: 40%;
+  left: 62%;
+  padding: 20px;
+  max-width: 500px;
 }
 
-.payment-container {
-  padding-top: 350px;
+.donation-container {
+  position: absolute;
+  text-align: center;
+  top: 23%;
+  left: 70%;
+  color: black;
 }
 
-.payment-side {
-  background: rgb(2,0,36);
-background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgba(15,171,168,1) 0%, rgba(0,204,255,1) 83%);
+.toolbar {
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  left: 63%;
 }
 
-.payment-side input {
-  display: block;
-  margin: 20px auto;
-  padding: 8px 16px;
-  font-size: 16px;
-  color: #222;
-  background-color: #fff;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-}
-
-.Payment {
-  height: 100%;
-  align-items: center;
-}
-
-form button {
-  margin-left: 440px;
-}
