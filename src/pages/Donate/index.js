@@ -4,7 +4,6 @@ import Footer from "../../components/Footer";
 import "./donate.css";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import ToggleButton from "react-bootstrap/ToggleButton";
 import Form from "react-bootstrap/Form";
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -21,6 +20,7 @@ function Donate() {
     { name: "Give Monthly", value: "1" },
     { name: "Give Once", value: "2" },
   ];
+  const [selectedRadio, setSelectedRadio] = useState()
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
   const setField = (field, value) => {
@@ -36,6 +36,18 @@ function Donate() {
       });
   };
 
+
+
+  const getRadioValue = () => {
+    if (radioValue === '1')
+    setSelectedRadio('Monthly')
+    else
+    setSelectedRadio('Once')
+  }
+
+  useEffect(() => {
+    getRadioValue()
+  },radioValue)
 
   const validateForm = () => {
     const { address, mail, name, number, surname } = form;
@@ -68,7 +80,7 @@ function Donate() {
         mail: form.mail,
         number: form.number,
         address: form.address,
-        donationType: 'Once',
+        donationType: selectedRadio,
         donationAmount: '30'
       })
       .then(res => {
@@ -86,12 +98,6 @@ function Donate() {
 
       <div className="info-side">
       <div className="toolbar">
-        <ButtonToolbar className="mb-3">
-        <ButtonGroup size='lg' className="me-2">
-          <Button id="option-1" variant="primary">15$</Button>
-          <Button id="option-2" variant="primary">30$</Button>
-          <Button id="option-3" variant="primary">45$</Button>
-        </ButtonGroup>
         <InputGroup>
           <InputGroup.Text id="btnGroupAddon">$</InputGroup.Text>
           <Form.Control
@@ -100,7 +106,6 @@ function Donate() {
             placeholder="Other amount"
           />
         </InputGroup>
-      </ButtonToolbar>
         </div>
         <div className="info-container">
           <h3>Your Info</h3>
