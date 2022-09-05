@@ -6,6 +6,7 @@ import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import Modal from "react-bootstrap/Modal"
 import emailjs from '@emailjs/browser';
+import api from '../../api/data'
 
 function Join() {
 
@@ -53,6 +54,18 @@ function Join() {
         setErrors(formErrors)
       }else{
         emailjs.sendForm('service_di4caar', 'template_e2zn009', join.current, 'vfIYz4eqhWMQv2r60')
+        api.post('/volunteers', {
+          name: form.name,
+          surname: form.surname,
+          mail: form.mail,
+          number: form.number,
+          address: form.address,
+          reason: form.reason,
+          gender: form.gender
+        })
+        .then(res => {
+          console.log(res.data);
+        })
         handleShow()
       }
     }

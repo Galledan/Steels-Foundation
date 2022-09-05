@@ -3,8 +3,22 @@ import NavigationBar from "../../components/NavigationBar";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Footer from "../../components/Footer";
+import { useEffect, useState } from "react";
+import api from '../../api/data'
 
 function Home() {
+
+  const [donators,setDonators] = useState()
+
+  useEffect(() => {
+    const getDonators = async () => {
+      await api.get('/donators')
+      .then(res => {
+        setDonators(res.data)
+      })
+    }
+    getDonators()
+  },)
 
   return (
     <div className="Home">
@@ -116,6 +130,14 @@ function Home() {
               height={200}
             />
           </a>
+        </div>
+        <div className="don-container">
+        <h1>Top Donators</h1>
+          {donators && donators.map((donator,i) =>(
+            <div className="donatorList">
+              <li key={i}>{donator.name} {donator.surname} donated {donator.donationAmount}$</li>
+            </div>
+          ))}
         </div>
       </div>
 

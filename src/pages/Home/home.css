@@ -52,7 +52,7 @@
     border-radius: 8px;
 }
 
-.supply-container, .edu-container, .spo-container {
+.supply-container, .edu-container, .spo-container,.don-container {
     height: 500px;
     width: 100%;
 }
@@ -125,3 +125,6 @@
 
 }
 
+.don-container{
+    text-align: center;
+}
