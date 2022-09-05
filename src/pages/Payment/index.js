@@ -4,6 +4,7 @@ import "react-credit-cards/es/styles-compiled.css";
 import "./payment.css";
 import Button from "react-bootstrap/Button";
 import NavigationBar from "../../components/NavigationBar";
+import emailjs from '@emailjs/browser';
 
 function Payment() {
   const [number, setNumber] = useState("");
@@ -17,6 +18,9 @@ function Payment() {
   const [focus, setFocus] = useState("");
 
   const firstRender = useRef(true)
+
+  const payment = useRef()
+    
    
   useEffect(() => {
     if (firstRender.current) {
@@ -36,6 +40,13 @@ function Payment() {
     ref.current.focus();
   }, []);
 
+  const onSubmit = () => {
+  
+    emailjs.sendForm('service_di4caar', 'template_s7wrlnf', payment.current, 'vfIYz4eqhWMQv2r60')
+
+  }
+ 
+
   const ref = useRef(null);
   return (
     <div className="Payment">
@@ -49,10 +60,10 @@ function Payment() {
           focused={focus}
           
         />
-        <form>
+        <form ref={payment}>
           <input
             type="tel"
-            name="number"
+            name="payment.number"
             maxLength={16}
             placeholder="Card Number"
             value={number}
@@ -62,7 +73,7 @@ function Payment() {
           />
           <input
             type="text"
-            name="name"
+            name="payment.name"
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -70,7 +81,7 @@ function Payment() {
           />
           <input
             type="tel"
-            name="expiry"
+            name="payment.expiry"
             maxLength={5}
             placeholder="MM/YY"
             value={expiry}
@@ -79,7 +90,7 @@ function Payment() {
           />
           <input
             type="tel"
-            name="cvc"
+            name="payment.cvc"
             maxLength={3}
             placeholder="CVC"
             value={cvc}
@@ -87,7 +98,7 @@ function Payment() {
             onFocus={(e) => setFocus(e.target.name)}
           />
         </form>
-        <Button variant="primary" type="submit">Pay</Button>
+        <Button onClick={onSubmit} variant="primary" type="submit">Pay</Button>
       </div>
       <div className="text-container">
         <h1>Thanks for your donation!</h1>

@@ -79,6 +79,7 @@
     position: absolute;
     top: 175%;
     left: 75%;
+    font-size: 35px;
     
 }
 
@@ -104,6 +105,8 @@
     position: absolute;
     top: 228%;
     right: 75%;
+    font-size: 35px;
+    
     
 }
 

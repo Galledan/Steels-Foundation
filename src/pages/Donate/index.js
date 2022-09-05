@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import "./donate.css";
@@ -8,9 +8,13 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import ToggleButton from "react-bootstrap/ToggleButton";
 import Form from "react-bootstrap/Form";
 import InputGroup from 'react-bootstrap/InputGroup';
+import {useNavigate} from 'react-router-dom'
+import api from '../../api/data'
+
 
 
 function Donate() {
+
 
   const [radioValue, setRadioValue] = useState("1");
   const radios = [
@@ -32,6 +36,7 @@ function Donate() {
       });
   };
 
+
   const validateForm = () => {
     const { address, mail, name, number, surname } = form;
     const newErrors = {};
@@ -47,6 +52,7 @@ function Donate() {
     return newErrors;
   };
 
+  const navigate = useNavigate()
 
 
   const handleSubmit = (e) => {
@@ -56,6 +62,19 @@ function Donate() {
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
     } else {
+      api.post('/donators', {
+        name: form.name,
+        surname: form.surname,
+        mail: form.mail,
+        number: form.number,
+        address: form.address,
+        donationType: 'Once',
+        donationAmount: '30'
+      })
+      .then(res => {
+        console.log(res.data);
+      })
+      navigate('/donate/payment')
     }
   };
   return (
@@ -178,7 +197,6 @@ function Donate() {
             ))}
           </ButtonGroup>
         </div>
-        
       </div>
 
       <Footer />
