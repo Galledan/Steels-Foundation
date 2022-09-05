@@ -1,15 +1,16 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./join.css";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import Modal from "react-bootstrap/Modal"
+import emailjs from '@emailjs/browser';
 
 function Join() {
 
   const [show, setShow] = useState(false);
-
+  const join = useRef()
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -51,6 +52,7 @@ function Join() {
       if(Object.keys(formErrors).length > 0){
         setErrors(formErrors)
       }else{
+        emailjs.sendForm('service_di4caar', 'template_e2zn009', join.current, 'vfIYz4eqhWMQv2r60')
         handleShow()
       }
     }
@@ -66,12 +68,13 @@ function Join() {
       </div>
       <div className="form-container">
         <h3>Registration</h3>
-        <Form>
+        <Form ref={join}>
           <div className="row">
             <Form.Group className="col" controlId="name">
               <Form.Label>Name</Form.Label>
               <Form.Control 
               type="text" 
+              name="join_name"
               placeholder="Your name here"
               value={form.name}
               onChange={(e) => setField('name',e.target.value)}
@@ -84,7 +87,8 @@ function Join() {
               <Form.Label>Surname</Form.Label>
               <Form.Control 
               type="text" 
-              placeholder="Your surname here" 
+              placeholder="Your surname here"
+              name="join_surname" 
               value={form.surname}
               onChange={(e) => setField('surname',e.target.value)}
               isInvalid={!!errors.surname} />
@@ -96,6 +100,7 @@ function Join() {
               <Form.Label>Date of Birth</Form.Label>
               <Form.Control 
               type="date" 
+              name="join_dob" 
               placeholder="Enter the date of birth"
               value={form.dob}
               onChange={(e) => setField('dob',e.target.value)}
@@ -110,7 +115,8 @@ function Join() {
             <Form.Group className="col" controlId="mail">
             <Form.Label>Email address</Form.Label>
               <Form.Control 
-              type="email" 
+              type="email"
+              name="join_mail" 
               placeholder="Enter email"
               value={form.mail}
               onChange={(e) => setField('mail',e.target.value)}

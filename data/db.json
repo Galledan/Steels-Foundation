@@ -1,0 +1,27 @@
+{
+  "volunteers": [
+    {
+      "id": "1",
+      "name": "Onur",
+      "surname": "Çelikler",
+      "dob": "27.05.1998",
+      "mail": "onrclklr@gmail.com",
+      "number": "05053339031",
+      "address": "Site Mah. Soyak Yenişehir Manolya Evleri A3 Blok Daire 40",
+      "reason": "To help",
+      "gender": "Male"
+    }
+  ],
+  "donators": [
+    {
+      "id": "1",
+      "name": "Onur",
+      "surname": "Çelikler",
+      "mail": "onrclklr@gmail.com",
+      "number": "05053339031",
+      "address": "Site Mah. Soyak Yenişehir Manolya Evleri A3 Blok Daire 40",
+      "donationType": "Once",
+      "donationAmount": "15"
+    }
+  ]
+}
