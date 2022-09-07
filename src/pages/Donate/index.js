@@ -9,6 +9,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from 'react-bootstrap/InputGroup';
 import {useNavigate} from 'react-router-dom'
 import api from '../../api/data'
+import { useTranslation} from 'react-i18next';
 
 
 
@@ -16,10 +17,13 @@ function Donate() {
 
 
   const [radioValue, setRadioValue] = useState("1");
+  const { t } = useTranslation();
+
   const radios = [
     { name: "Give Monthly", value: "1" },
     { name: "Give Once", value: "2" },
   ];
+  
   const [selectedRadio, setSelectedRadio] = useState()
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
@@ -47,7 +51,7 @@ function Donate() {
 
   useEffect(() => {
     getRadioValue()
-  },radioValue)
+  })
 
   const validateForm = () => {
     const { address, mail, name, number, surname } = form;
@@ -93,7 +97,7 @@ function Donate() {
     <div className="Donate">
       <NavigationBar />
       <div className="options-side">
-          <h1>You are about to change a child's life!</h1>
+          <h1>{t("You are about to change a child's life!")}</h1>
         </div>
 
       <div className="info-side">
@@ -103,19 +107,19 @@ function Donate() {
           <Form.Control
             id="option-4"
             type="text"
-            placeholder="Other amount"
+            placeholder={t("Amount of money")}
           />
         </InputGroup>
         </div>
         <div className="info-container">
-          <h3>Your Info</h3>
+          <h3>{t("Your Info")}</h3>
           <Form>
             <div className="row">
               <Form.Group className="col" controlId="name">
-                <Form.Label>Name</Form.Label>
+                <Form.Label>{t("Name")}</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Your name"
+                  placeholder={t("Your name")}
                   value={form.name}
                   onChange={(e) => setField("name", e.target.value)}
                   isInvalid={!!errors.name}
@@ -125,10 +129,10 @@ function Donate() {
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="col" controlId="surname">
-                <Form.Label>Surname</Form.Label>
+                <Form.Label>{t("Surname")}</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Your surname"
+                  placeholder={t("Your surname")}
                   value={form.surname}
                   onChange={(e) => setField("surname", e.target.value)}
                   isInvalid={!!errors.surname}
@@ -141,10 +145,10 @@ function Donate() {
 
             <div className="row">
               <Form.Group className="col" controlId="mail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>{t("Email address")}</Form.Label>
                 <Form.Control
                   type="email"
-                  placeholder="Enter email"
+                  placeholder={t("Enter email")}
                   value={form.mail}
                   onChange={(e) => setField("mail", e.target.value)}
                   isInvalid={!!errors.mail}
@@ -154,10 +158,10 @@ function Donate() {
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="col" controlId="number">
-                <Form.Label>Phone Number</Form.Label>
+                <Form.Label>{t("Phone Number")}</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Phone number here"
+                  placeholder={t("Phone number here")}
                   value={form.number}
                   onChange={(e) => setField("number", e.target.value)}
                   isInvalid={!!errors.number}
@@ -168,10 +172,10 @@ function Donate() {
               </Form.Group>
             </div>
             <Form.Group className="mb-3" controlId="address">
-              <Form.Label>Address</Form.Label>
+              <Form.Label>{t("Address")}</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Your address here"
+                placeholder={t("Your address here")}
                 value={form.address}
                 onChange={(e) => setField("address", e.target.value)}
                 isInvalid={!!errors.address}
@@ -180,11 +184,11 @@ function Donate() {
                 {errors.address}
               </Form.Control.Feedback>
             </Form.Group>
-            <Button onClick={handleSubmit} type="submit" variant="primary">Go to Payment</Button>
+            <Button onClick={handleSubmit} type="submit" variant="primary">{t("Go to Payment")}</Button>
           </Form>
         </div>
         <div className="donation-container">
-          <p>Please select a donate type</p>
+          <p>{t("Please select a donate type")}</p>
           <ButtonGroup>
             {radios.map((radio, x) => (
               <ToggleButton

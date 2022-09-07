@@ -7,10 +7,12 @@ import Footer from "../../components/Footer";
 import Modal from "react-bootstrap/Modal"
 import emailjs from '@emailjs/browser';
 import api from '../../api/data'
+import {useTranslation} from 'react-i18next';
 
 function Join() {
 
   const [show, setShow] = useState(false);
+  const { t } = useTranslation();
   const join = useRef()
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -73,22 +75,22 @@ function Join() {
   return (
     <div className="Join">
       <NavigationBar />
-      <img src={require("../../images/volunteer.jpg")} alt="bg" />
+      <img className="bg" src={require("../../images/volunteer.jpg")} alt="bg" />
 
       <div className="join-container">
-        <h1>Join Us</h1>
-        <p>Thanks for deciding to join us! Help us to grow our team and lets provide quality education to every children we can reach.</p>
+        <h1>{t("Join Us")}</h1>
+        <p>{t("Thanks for deciding to join us! Help us to grow our team and lets provide quality education to every children we can reach.")}</p>
       </div>
       <div className="form-container">
-        <h3>Registration</h3>
+        <h3>{t("Registration")}</h3>
         <Form ref={join}>
           <div className="row">
             <Form.Group className="col" controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>{t("Name")}</Form.Label>
               <Form.Control 
               type="text" 
               name="join_name"
-              placeholder="Your name here"
+              placeholder={t("Your name here")}
               value={form.name}
               onChange={(e) => setField('name',e.target.value)}
               isInvalid={!!errors.name} />
@@ -97,10 +99,10 @@ function Join() {
             </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="col" controlId="surname">
-              <Form.Label>Surname</Form.Label>
+              <Form.Label>{t("Surname")}</Form.Label>
               <Form.Control 
               type="text" 
-              placeholder="Your surname here"
+              placeholder={t("Your surname here")}
               name="join_surname" 
               value={form.surname}
               onChange={(e) => setField('surname',e.target.value)}
@@ -110,11 +112,11 @@ function Join() {
             </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="col" controlId="dob">
-              <Form.Label>Date of Birth</Form.Label>
+              <Form.Label>{t("Date of Birth")}</Form.Label>
               <Form.Control 
               type="date" 
               name="join_dob" 
-              placeholder="Enter the date of birth"
+              placeholder={t("Enter the date of birth")}
               value={form.dob}
               onChange={(e) => setField('dob',e.target.value)}
               isInvalid={!!errors.dob} />
@@ -126,11 +128,11 @@ function Join() {
 
           <div className="row">       
             <Form.Group className="col" controlId="mail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>{t("Email address")}</Form.Label>
               <Form.Control 
               type="email"
               name="join_mail" 
-              placeholder="Enter email"
+              placeholder={t("Enter email")}
               value={form.mail}
               onChange={(e) => setField('mail',e.target.value)}
               isInvalid={!!errors.mail} />
@@ -139,10 +141,10 @@ function Join() {
             </Form.Control.Feedback>
               </Form.Group>
             <Form.Group className="col" controlId="number">
-              <Form.Label>Phone Number</Form.Label>
+              <Form.Label>{t("Phone Number")}</Form.Label>
               <Form.Control 
               type="text" 
-              placeholder="Phone number here"
+              placeholder={t("Phone number here")}
               value={form.number}
               onChange={(e) => setField('number',e.target.value)}
               isInvalid={!!errors.number} />
@@ -152,10 +154,10 @@ function Join() {
             </Form.Group>
           </div>
           <Form.Group className="mb-3" controlId="address">
-            <Form.Label>Address</Form.Label>
+            <Form.Label>{t("Address")}</Form.Label>
             <Form.Control 
             type="text" 
-            placeholder="Your address here" 
+            placeholder={t("Your address here")} 
             value={form.address}
             onChange={(e) => setField('address',e.target.value)}
             isInvalid={!!errors.address} />
@@ -164,10 +166,10 @@ function Join() {
             </Form.Control.Feedback>
           </Form.Group>
           <Form.Group className="mb-3" controlId="reason">
-            <Form.Label>Why do you wanna be part of us?</Form.Label>
+            <Form.Label>{t("Why do you wanna be part of us?")}</Form.Label>
             <Form.Control 
             type="text" 
-            placeholder="Explain your reasons"
+            placeholder={t("Explain your reasons")}
             value={form.reason}
             onChange={(e) => setField('reason',e.target.value)}
             isInvalid={!!errors.reason} />
@@ -177,7 +179,7 @@ function Join() {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="gender">
-          <Form.Label>Gender</Form.Label>
+          <Form.Label>{t("Gender")}</Form.Label>
             <Form.Select
             value={form.gender}
             isInvalid={!!errors.gender}
@@ -185,10 +187,10 @@ function Join() {
             onChange={(e) => {
               setField('gender', e.target.value)
             }}>
-            <option>Select Gender</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-            <option value="U">Prefer not to say</option>
+            <option>{t("Select Gender")}</option>
+            <option value="M">{t("Male")}</option>
+            <option value="F">{t("Female")}</option>
+            <option value="U">{t("Prefer not to say")}</option>
             </Form.Select>
             <Form.Control.Feedback type="invalid">
               {errors.gender}
@@ -197,7 +199,7 @@ function Join() {
         
           
           <Button variant="primary" size="lg" onClick={handleSubmit}>
-        Register
+          {t("Register")}
       </Button>
           
       <Modal show={show} onHide={handleClose}>

@@ -4,26 +4,25 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
-import api from '../../api/data'
+import api from "../../api/data";
+import { useTranslation } from "react-i18next";
 
 function Home() {
-
-  const [donators,setDonators] = useState()
+  const [donators, setDonators] = useState();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const getDonators = async () => {
-      await api.get('/donators')
-      .then(res => {
-        setDonators(res.data)
-      })
-    }
-    getDonators()
-  },)
+      await api.get("/donators").then((res) => {
+        setDonators(res.data);
+      });
+    };
+    getDonators();
+  }, []);
 
   return (
     <div className="Home">
       <NavigationBar />
-
       <div className="carousel">
         <Carousel>
           <Carousel.Item>
@@ -33,10 +32,10 @@ function Home() {
               alt="students"
             />
             <Carousel.Caption>
-              <h1>Support A Child's Education</h1>
-              <p>Quality Education is every child's right.</p>
+              <h1>{t("Support A Child's Education")}</h1>
+              <p>{t("Quality Education is every child's right.")}</p>
               <Button href="/donate" variant="primary" size="lg">
-                Support a Child
+                {t("Support a Child")}
               </Button>
             </Carousel.Caption>
           </Carousel.Item>
@@ -48,10 +47,14 @@ function Home() {
               alt="teachers"
             />
             <Carousel.Caption>
-              <h1>Join Us to Help</h1>
-              <p>Volunteer and help children to get them quality education.</p>
+              <h1>{t("Join Us to Help")}</h1>
+              <p>
+                {t(
+                  "Volunteer and help children to get them quality education."
+                )}
+              </p>
               <Button href="/join" variant="primary" size="lg">
-                Join Us
+                {t("Join Us")}
               </Button>
             </Carousel.Caption>
           </Carousel.Item>
@@ -59,14 +62,11 @@ function Home() {
       </div>
 
       <div className="why-text">
-        <h1>Why Quality Education is Important?</h1>
+        <h1>{t("Why Quality Education is Important?")}</h1>
         <p>
-          Education is the key for succeding in many Sustainable Development
-          Goals(SDGs). People can walk away from poverty when they got quality
-          education. That's why Education helps decreasing inequality and ensure
-          social gender equality. Also helps to have a healthy and sustainable
-          life wherever people are. Education also helps to improve clemency and
-          build a peaceful society.
+          {t(
+            "Education is the key for succeding in many Sustainable Development Goals(SDGs). People can walk away from poverty when they got quality education. That's why Education helps decreasing inequality and ensure social gender equality. Also helps to have a healthy and sustainable life wherever people are. Education also helps to improve clemency and build a peaceful society."
+          )}
         </p>
 
         <img
@@ -79,25 +79,26 @@ function Home() {
       <div className="con">
         <div className="supply-container">
           <p>
-            Thanks to your donations we provide stationary items, medical
-            support, uniforms, nutritious food and etc. to the children who
-            cannot afford them
+            {t(
+              "Thanks to your donations we provide stationary items, medicalsupport, uniforms, nutritious food and etc. to the children who cannot afford them"
+            )}
           </p>
           <Button href="/donate" variant="primary" size="lg">
-            Donate
+            {t("Donate")}
           </Button>
         </div>
         <div className="edu-container">
           <p>
-            Volunteer for children and be a part of our non-profit foundation.
-            Help us to give children a quality education which is their right.
+            {t(
+              "Volunteer for children and be a part of our non-profit foundation. Help us to give children a quality education which is their right."
+            )}
           </p>
           <Button href="/donate" variant="primary" size="lg">
-            Join Us
+            {t("Join Us")}
           </Button>
         </div>
         <div className="spo-container">
-          <h1>Our partners</h1>
+          <h1>{t("Our partners")}</h1>
           <a href="https://www.mev.org.tr">
             <img
               src={require("../../images/mev.png")}
@@ -132,12 +133,18 @@ function Home() {
           </a>
         </div>
         <div className="don-container">
-        <h1>Top Donators</h1>
-          {donators && donators.map((donator,i) =>(
-            <div className="donatorList">
-              <li key={i}>{donator.name} {donator.surname} donated {donator.donationAmount}$</li>
-            </div>
-          ))}
+          <h1>{t("Latest Donations")}</h1>
+          <div className="donatorList">
+            <ul>
+              {donators &&
+                donators.slice(-5).map((donator, i) => (
+                  <li key={i}>
+                    {donator.name} {donator.surname} {t("donated")}{" "}
+                    {donator.donationAmount}$
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
       </div>
 

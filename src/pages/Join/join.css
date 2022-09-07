@@ -26,12 +26,12 @@
     color: black;
     top: 15%;
     left: 52%;
-    background-color: rgba(255, 255, 255, 0.39);
+    background-color: rgba(255, 255, 255, 0.59);
     border-radius: 5px;
     padding: 20px;
 }
 
-.Join img {
+.Join .bg {
     max-width: 100%;
     opacity: 0.65;
 }
