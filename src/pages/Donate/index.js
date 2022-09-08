@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import "./donate.css";
@@ -10,6 +10,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import {useNavigate} from 'react-router-dom'
 import api from '../../api/data'
 import { useTranslation} from 'react-i18next';
+import emailjs from '@emailjs/browser';
 
 
 
@@ -25,6 +26,7 @@ function Donate() {
   ];
   
   const [selectedRadio, setSelectedRadio] = useState()
+  const [amount, setAmount]= useState()
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
   const setField = (field, value) => {
@@ -69,7 +71,7 @@ function Donate() {
   };
 
   const navigate = useNavigate()
-
+  const donate = useRef()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -85,11 +87,12 @@ function Donate() {
         number: form.number,
         address: form.address,
         donationType: selectedRadio,
-        donationAmount: '30'
+        donationAmount: amount
       })
       .then(res => {
         console.log(res.data);
       })
+      emailjs.sendForm('service_di4caar', 'template_s7wrlnf', donate.current, 'vfIYz4eqhWMQv2r60')
       navigate('/donate/payment')
     }
   };
@@ -107,13 +110,15 @@ function Donate() {
           <Form.Control
             id="option-4"
             type="text"
+            value={amount}
             placeholder={t("Amount of money")}
+            onChange={(e) => setAmount(e.target.value)}
           />
         </InputGroup>
         </div>
         <div className="info-container">
           <h3>{t("Your Info")}</h3>
-          <Form>
+          <Form ref={donate}>
             <div className="row">
               <Form.Group className="col" controlId="name">
                 <Form.Label>{t("Name")}</Form.Label>
@@ -121,6 +126,7 @@ function Donate() {
                   type="text"
                   placeholder={t("Your name")}
                   value={form.name}
+                  name="donate_name"
                   onChange={(e) => setField("name", e.target.value)}
                   isInvalid={!!errors.name}
                 />
@@ -134,6 +140,7 @@ function Donate() {
                   type="text"
                   placeholder={t("Your surname")}
                   value={form.surname}
+                  name="donate_surname"
                   onChange={(e) => setField("surname", e.target.value)}
                   isInvalid={!!errors.surname}
                 />
@@ -149,6 +156,7 @@ function Donate() {
                 <Form.Control
                   type="email"
                   placeholder={t("Enter email")}
+                  name="donate_mail"
                   value={form.mail}
                   onChange={(e) => setField("mail", e.target.value)}
                   isInvalid={!!errors.mail}
@@ -163,6 +171,7 @@ function Donate() {
                   type="text"
                   placeholder={t("Phone number here")}
                   value={form.number}
+                  name="donate_number"
                   onChange={(e) => setField("number", e.target.value)}
                   isInvalid={!!errors.number}
                 />
@@ -177,6 +186,7 @@ function Donate() {
                 type="text"
                 placeholder={t("Your address here")}
                 value={form.address}
+                name="donate_address"
                 onChange={(e) => setField("address", e.target.value)}
                 isInvalid={!!errors.address}
               />
