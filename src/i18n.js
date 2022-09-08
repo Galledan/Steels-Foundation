@@ -48,6 +48,8 @@ const resources = {
       "You can be sure this money will be used to change a life of a child.":"Bu paranın bir çocuğun hayatının değişmesi için kullanılacağından şüpheniz olmasın.",
       "Pay":"Öde",
 
+      "Your name here":"Adınızı yazınız",
+      "Your surname here":"Soyadınızı yazınız",
       "Date of Birth":"Doğum tarihiniz",
       "Why do you wanna be part of us?":"Neden bize katılmak istiyorsunuz?",
       "Explain your reasons":"Sebebiniz",

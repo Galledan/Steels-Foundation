@@ -4,7 +4,6 @@ import "react-credit-cards/es/styles-compiled.css";
 import "./payment.css";
 import Button from "react-bootstrap/Button";
 import NavigationBar from "../../components/NavigationBar";
-import emailjs from '@emailjs/browser';
 import Modal from "react-bootstrap/Modal"
 import {useTranslation} from 'react-i18next';
 
@@ -20,8 +19,6 @@ function Payment() {
   const [focus, setFocus] = useState("");
 
   const firstRender = useRef(true)
-
-  const payment = useRef()
 
   const { t} = useTranslation();
 
@@ -58,9 +55,7 @@ function Payment() {
 
 
   const onSubmit = () => {
-    emailjs.sendForm('service_di4caar', 'template_s7wrlnf', payment.current, 'vfIYz4eqhWMQv2r60')
     handleShow()
-
   }
  
 
@@ -77,10 +72,10 @@ function Payment() {
           focused={focus}
           
         />
-        <form ref={payment}>
+        <form>
           <input
             type="tel"
-            name="payment.number"
+            name="number"
             maxLength={16}
             placeholder={t("Card Number")}
             value={number}
@@ -90,7 +85,7 @@ function Payment() {
           />
           <input
             type="text"
-            name="payment.name"
+            name="name"
             placeholder={t("Full Name")}
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -98,7 +93,7 @@ function Payment() {
           />
           <input
             type="tel"
-            name="payment.expiry"
+            name="expiry"
             maxLength={5}
             placeholder={t("MM/YY")}
             value={expiry}
@@ -107,7 +102,7 @@ function Payment() {
           />
           <input
             type="tel"
-            name="payment.cvc"
+            name="cvc"
             maxLength={3}
             placeholder="CVC"
             value={cvc}
