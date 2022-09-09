@@ -16,6 +16,9 @@ function Join() {
   const join = useRef()
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  var today = new Date(),
+
+    date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
     const [form, setForm] = useState({})
     const [errors, setErrors] = useState({})
@@ -33,16 +36,16 @@ function Join() {
     }
   
     const validateForm = () => {
-      const {address, dob, gender, mail, name, number, reason, surname} = form
+      const {address, dob, gender, mail, name, number, job, surname} = form
       const newErrors = {}
         if(!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
-        if(!gender || gender === 'Select Gender') newErrors.gender = 'Please select gender'
+        if(!gender || gender === 'Select Gender') newErrors.gender = 'Please select a gender'
         if(!address || address === '') newErrors.address = 'Please enter your address '
         if(!mail || mail === '') newErrors.mail = 'Please enter your mail'
         if(!name|| name === '') newErrors.name = 'Please enter your name'
         if(!surname || surname === '') newErrors.surname = 'Please enter your surname'
         if(!number || number === '') newErrors.number = 'Please enter your phone number'
-        if(!reason || reason === '') newErrors.reason = 'Please enter your reason'
+        if(!job || job === 'Select a Job Type') newErrors.reason = 'Please select a job'
 
         return newErrors
 
@@ -59,11 +62,13 @@ function Join() {
         api.post('/volunteers', {
           name: form.name,
           surname: form.surname,
+          dob:form.dob,
           mail: form.mail,
           number: form.number,
           address: form.address,
-          reason: form.reason,
-          gender: form.gender
+          job: form.job,
+          gender: form.gender,
+          registerdate:date
         })
         .then(res => {
           console.log(res.data);
@@ -165,16 +170,24 @@ function Join() {
               {errors.address}
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="reason">
-            <Form.Label>{t("Why do you wanna be part of us?")}</Form.Label>
-            <Form.Control 
-            type="text" 
-            placeholder={t("Explain your reasons")}
-            value={form.reason}
-            onChange={(e) => setField('reason',e.target.value)}
-            isInvalid={!!errors.reason} />
+          <Form.Group className="mb-3" controlId="job">
+          <Form.Label>{t("Job")}</Form.Label>
+          <Form.Select
+            value={form.job}
+            isInvalid={!!errors.job}
+            placeholder='Select a Job'
+            onChange={(e) => {
+              setField('job', e.target.value)
+            }}>
+            <option>{t("Select a Job Type")}</option>
+            <option value="Educational">{t("Educational")}</option>
+            <option value="Medical">{t("Medical")}</option>
+            <option value="Social Work">{t("Social Work")}</option>
+            <option value="Fundraiser">{t("Fundraiser")}</option>
+            <option value="Other">{t("Other")}</option>
+            </Form.Select>
              <Form.Control.Feedback type="invalid">
-              {errors.reason}
+              {errors.job}
             </Form.Control.Feedback>
           </Form.Group>
 
