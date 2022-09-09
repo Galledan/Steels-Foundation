@@ -1,0 +1,9 @@
+.Admin{
+    height: 970px;
+}
+
+.login-container {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
