@@ -109,7 +109,7 @@ function Donate() {
           <InputGroup.Text id="btnGroupAddon">$</InputGroup.Text>
           <Form.Control
             id="option-4"
-            type="text"
+            type="tel"
             value={amount}
             placeholder={t("Amount of money")}
             onChange={(e) => setAmount(e.target.value)}

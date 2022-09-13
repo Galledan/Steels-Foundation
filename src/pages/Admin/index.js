@@ -13,36 +13,57 @@ function Admin() {
   const [loggedIn, isLoggedIn] = useState(false);
 
   const [donators, setDonators] = useState();
-  const [volunteers, setVolunteers] = useState();
+  const [pending, setPending] = useState();
+  const [approved, setApproved] = useState();
 
-  const handleVolunteerDelete =  async (index,e) => {
-    await api.delete('/volunteers/'+ index.toString())
-}
+  const handlePendingDelete = async (index, e) => {
+    await api.delete("/pending/" + index.toString());
+    getPending();
+    getApproved();
+  };
+
+  const handleApprovedDelete = async (index, e) => {
+    await api.delete("/approved/" + index.toString());
+    getApproved();
+    getPending();
+  };
+
+  const handleDonationDelete = async (index, e) => {
+    await api.delete("/donators/" + index.toString());
+    getDonators();
+  };
 
   const totalDonation = () => {
     var td = 0;
     for (let index = 0; index < donators.length; index++) {
-       td += parseInt(donators[index].donationAmount);
-     }
-     return td
-  }
+      td += parseInt(donators[index].donationAmount);
+    }
+    return td;
+  };
+
+  const getDonators = async () => {
+    await api.get("/donators").then((res) => {
+      setDonators(res.data);
+    });
+  };
+
+  const getPending = async () => {
+    await api.get("/pending").then((res) => {
+      setPending(res.data);
+    });
+  };
+
+  const getApproved = async () => {
+    await api.get("/approved").then((res) => {
+      setApproved(res.data);
+    });
+  };
 
   useEffect(() => {
-    const getDonators = async () => {
-      await api.get("/donators").then((res) => {
-        setDonators(res.data);
-      });
-    };
     getDonators();
-
-    const getVolunteers = async () => {
-      await api.get("/volunteers").then((res) => {
-        setVolunteers(res.data);
-      });
-    };
-    getVolunteers();
+    getPending();
+    getApproved();
   }, []);
-  
 
   const onLogin = () => {
     if (username === "admin" && password === "admin") {
@@ -51,6 +72,23 @@ function Admin() {
       isLoggedIn(false);
     }
   };
+
+  const approveVolunteer = async (index, e) => {
+   await api.get('/pending/' + index.toString())
+    .then(res => {
+      api.post('/approved', res.data)
+    })
+    handlePendingDelete(index, e)
+  }
+
+  const unapproveVolunteer = async (index, e) => {
+    await api.get('/approved/' + index.toString())
+     .then(res => {
+       api.post('/pending', res.data)
+     })
+     handleApprovedDelete(index, e)
+   }
+
 
   return (
     <div className="Admin">
@@ -101,79 +139,157 @@ function Admin() {
             fill
           >
             <Tab eventKey="main" title="Main">
-              <h1>Total Donation</h1>
-              <span>{totalDonation()}</span>
+              <div className="main-container">
+                <h1>Total Donation</h1>
+                <span>{totalDonation()}</span>
+                <h1>Total Pending Volunteers</h1>
+                <span>{pending.length}</span>
+                <h1>Total Approved Volunteers</h1>
+                <span>{approved.length}</span>
+              
+              </div>
             </Tab>
 
             <Tab eventKey="volunteer" title="Volunteers">
-              <Table striped bordered hover>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>Date of Birth</th>
-                    <th>Mail</th>
-                    <th>Phone Number</th>
-                    <th>Address</th>
-                    <th>Job</th>
-                    <th>Gender</th>
-                    <th>Register Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                {volunteers &&
-                volunteers.map((volunteer, i) => (
-                  <tr key={i}>
-                    <th>{i+1}</th>
-                    <th>{volunteer.name}</th>
-                    <th>{volunteer.surname}</th>
-                    <th>{volunteer.dob}</th>
-                    <th>{volunteer.mail}</th>
-                    <th>{volunteer.number}</th>
-                    <th>{volunteer.address}</th>
-                    <th>{volunteer.job}</th>
-                    <th>{volunteer.gender}</th>
-                    <th>{volunteer.registerdate}</th>
-                    <td><button onClick={e => handleVolunteerDelete(volunteer.id,e)}>Delete</button></td>
-                  </tr>
-                ))}
-                </tbody>
-
-              </Table>
+              <div className="volunteer-container">
+                <div className="pending-table">
+                <h2>Pending</h2>
+                  <Table striped bordered hover size="sm" responsive>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Date of Birth</th>
+                        <th>Mail</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Job</th>
+                        <th>Gender</th>
+                        <th>Register Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {pending &&
+                        pending.map((volunteer, i) => (
+                          <tr key={i}>
+                            <th>{i + 1}</th>
+                            <th>{volunteer.name}</th>
+                            <th>{volunteer.surname}</th>
+                            <th>{volunteer.dob}</th>
+                            <th>{volunteer.mail}</th>
+                            <th>{volunteer.number}</th>
+                            <th>{volunteer.address}</th>
+                            <th>{volunteer.job}</th>
+                            <th>{volunteer.gender}</th>
+                            <th>{volunteer.registerdate}</th>
+                            <td>
+                              <button
+                                onClick={(e) =>
+                                  handlePendingDelete(volunteer.id, e)
+                                }
+                              >
+                                Delete
+                              </button>
+                              <button onClick={(e) => approveVolunteer(volunteer.id, e)}>Approve</button>
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </Table>
+                </div>
+                <div className="approved-table">
+                  <h2>Approved</h2>
+                  <Table striped bordered hover size="sm" responsive>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Date of Birth</th>
+                        <th>Mail</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Job</th>
+                        <th>Gender</th>
+                        <th>Register Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {approved &&
+                        approved.map((volunteer, i) => (
+                          <tr key={i}>
+                            <th>{i + 1}</th>
+                            <th>{volunteer.name}</th>
+                            <th>{volunteer.surname}</th>
+                            <th>{volunteer.dob}</th>
+                            <th>{volunteer.mail}</th>
+                            <th>{volunteer.number}</th>
+                            <th>{volunteer.address}</th>
+                            <th>{volunteer.job}</th>
+                            <th>{volunteer.gender}</th>
+                            <th>{volunteer.registerdate}</th>
+                            <td>
+                              <button
+                                onClick={(e) =>
+                                  handleApprovedDelete(volunteer.id, e)
+                                }
+                              >
+                                Delete
+                              </button>
+                              <button onClick={(e) => unapproveVolunteer(volunteer.id, e)}>Send Back</button>
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </Table>
+                </div>
+              </div>
             </Tab>
 
             <Tab eventKey="donation" title="Donations">
-            <Table striped bordered hover>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>Mail</th>
-                    <th>Phone Number</th>
-                    <th>Address</th>
-                    <th>Donation Type</th>
-                    <th>Donation Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                {donators &&
-                donators.map((donator, i) => (
-                  <tr key={i}>
-                    <th>{i+1}</th>
-                    <th>{donator.name}</th>
-                    <th>{donator.surname}</th>
-                    <th>{donator.mail}</th>
-                    <th>{donator.number}</th>
-                    <th>{donator.address}</th>
-                    <th>{donator.donationType}</th>
-                    <th>{donator.donationAmount}</th>
-                  </tr>
-                ))}
-                </tbody>
-
-              </Table>
+              <div className="donator-container">
+                <div className="donator-table">
+                  <Table striped bordered hover>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Mail</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Donation Type</th>
+                        <th>Donation Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {donators &&
+                        donators.map((donator, i) => (
+                          <tr key={i}>
+                            <th>{i + 1}</th>
+                            <th>{donator.name}</th>
+                            <th>{donator.surname}</th>
+                            <th>{donator.mail}</th>
+                            <th>{donator.number}</th>
+                            <th>{donator.address}</th>
+                            <th>{donator.donationType}</th>
+                            <th>{donator.donationAmount}</th>
+                            <td>
+                              <button
+                                onClick={(e) =>
+                                  handleDonationDelete(donator.id, e)
+                                }
+                              >
+                                Delete
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </Table>
+                </div>
+              </div>
             </Tab>
           </Tabs>
         </div>

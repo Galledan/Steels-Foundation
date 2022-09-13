@@ -8,6 +8,7 @@ import Modal from "react-bootstrap/Modal"
 import emailjs from '@emailjs/browser';
 import api from '../../api/data'
 import {useTranslation} from 'react-i18next';
+import {v4 as uuid}  from 'uuid'
 
 function Join() {
 
@@ -59,7 +60,8 @@ function Join() {
         setErrors(formErrors)
       }else{
         emailjs.sendForm('service_di4caar', 'template_e2zn009', join.current, 'vfIYz4eqhWMQv2r60')
-        api.post('/volunteers', {
+        api.post('/pending', {
+          id: uuid(),
           name: form.name,
           surname: form.surname,
           dob:form.dob,
