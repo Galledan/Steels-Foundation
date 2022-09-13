@@ -7,3 +7,25 @@
     place-items: center;
     height: 100%;
 }
+
+.volunteer-container{
+    display: flex;
+    align-items: center;
+}
+
+.approved-table, .pending-table {
+    max-width: 750px;
+    max-height: 800px;
+}
+
+.approved-table {
+    position: absolute;
+    top: 20%;
+    left: 56%;
+}
+
+.pending-table {
+    position: absolute;
+    top: 20%;
+    left: 4%;
+}
