@@ -55,20 +55,35 @@ function Donate() {
     getRadioValue()
   })
 
+  const textReg = new RegExp(/[a-zA-Z]/)
+  const numReg = new RegExp(/[0-9]/)
+  const mailReg = new RegExp(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\w{2,3})+$/)
+
   const validateForm = () => {
     const { address, mail, name, number, surname } = form;
     const newErrors = {};
     if (!address || address === "")
       newErrors.address = "Please enter your address ";
     if (!mail || mail === "") newErrors.mail = "Please enter your mail";
+    if(!mailReg.test(mail)) newErrors.mail = 'Please enter a valid mail'
     if (!name || name === "") newErrors.name = "Please enter your name";
+    if(!textReg.test(name)) newErrors.name = 'Please enter a valid name'
     if (!surname || surname === "")
       newErrors.surname = "Please enter your surname";
+      if(!textReg.test(surname)) newErrors.surname = 'Please enter a valid surname'
     if (!number || number === "")
       newErrors.number = "Please enter your phone number";
+      if(!numReg.test(number)) newErrors.number = 'Please enter numbers only remove any text'
+
 
     return newErrors;
   };
+
+  const amountValidation = () => {
+    if (!amount || amount === "")
+    return true
+    if(!numReg.test(amount)) return true
+  }
 
   const navigate = useNavigate()
   const donate = useRef()
@@ -113,6 +128,7 @@ function Donate() {
             value={amount}
             placeholder={t("Amount of money")}
             onChange={(e) => setAmount(e.target.value)}
+            isInvalid={!!amountValidation()}
           />
         </InputGroup>
         </div>

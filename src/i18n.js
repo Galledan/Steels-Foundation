@@ -51,8 +51,13 @@ const resources = {
       "Your name here":"Adınızı yazınız",
       "Your surname here":"Soyadınızı yazınız",
       "Date of Birth":"Doğum tarihiniz",
-      "Why do you wanna be part of us?":"Neden bize katılmak istiyorsunuz?",
-      "Explain your reasons":"Sebebiniz",
+      "Job":"İş Grubunuz",
+      "Select a Job Type":"İş grubu seçiniz",
+      "Educational":"Eğitim",
+      "Medical":"Medikal",
+      "Social Work":"Sosyal Çalışma",
+      "Fundraiser":"Bağış Toplayıcı",
+      "Other":"Diğer",
       "Gender":"Cinsiyet",
       "Select Gender":"Cinsiyetinizi seçiniz",
       "Male":"Erkek",
@@ -61,7 +66,6 @@ const resources = {
       "Thanks for deciding to join us! Help us to grow our team and lets provide quality education to every children we can reach.":"Bize katılmak istediğin için teşekkür ederiz! Büyümemize yardımcı ol ve ulaşabildiğimiz her çocuğa nitelikli bir eğitim kazandıralım.",
       "Register":"Başvur",
       "Registration":"Başvuru Formu",
-      "TR":"ENG"
 
 
     }

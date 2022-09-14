@@ -16,6 +16,8 @@ function Admin() {
   const [pending, setPending] = useState();
   const [approved, setApproved] = useState();
 
+  const [name, setName] = useState();
+
   const handlePendingDelete = async (index, e) => {
     await api.delete("/pending/" + index.toString());
     getPending();
@@ -74,21 +76,30 @@ function Admin() {
   };
 
   const approveVolunteer = async (index, e) => {
-   await api.get('/pending/' + index.toString())
-    .then(res => {
-      api.post('/approved', res.data)
-    })
-    handlePendingDelete(index, e)
-  }
+    await api.get("/pending/" + index.toString()).then((res) => {
+      api.post("/approved", res.data);
+    });
+    handlePendingDelete(index, e);
+  };
 
   const unapproveVolunteer = async (index, e) => {
-    await api.get('/approved/' + index.toString())
-     .then(res => {
-       api.post('/pending', res.data)
-     })
-     handleApprovedDelete(index, e)
-   }
+    await api.get("/approved/" + index.toString()).then((res) => {
+      api.post("/pending", res.data);
+    });
+    handleApprovedDelete(index, e);
+  };
 
+  const pendingNameFilter = async (name) => {
+    await api.get("/pending?name=" + name).then((res) => {
+      setPending(res.data);
+    });
+  };
+
+  const approvedNameFilter = async (name) => {
+    await api.get("/approved?name=" + name).then((res) => {
+      setApproved(res.data);
+    });
+  };
 
   return (
     <div className="Admin">
@@ -146,14 +157,18 @@ function Admin() {
                 <span>{pending.length}</span>
                 <h1>Total Approved Volunteers</h1>
                 <span>{approved.length}</span>
-              
               </div>
             </Tab>
 
             <Tab eventKey="volunteer" title="Volunteers">
               <div className="volunteer-container">
                 <div className="pending-table">
-                <h2>Pending</h2>
+                  <h2>Pending</h2>
+                  <input onChange={(e) => setName(e.target.value)}></input>
+                  <Button onClick={() => pendingNameFilter(name)}>
+                    Filter
+                  </Button>
+                  <Button onClick={() => getPending()}>Clear Filter</Button>
                   <Table striped bordered hover size="sm" responsive>
                     <thead>
                       <tr>
@@ -179,7 +194,7 @@ function Admin() {
                             <th>{volunteer.dob}</th>
                             <th>{volunteer.mail}</th>
                             <th>{volunteer.number}</th>
-                            <th>{volunteer.address}</th>
+                            <th className="thaddress">{volunteer.address}</th>
                             <th>{volunteer.job}</th>
                             <th>{volunteer.gender}</th>
                             <th>{volunteer.registerdate}</th>
@@ -191,15 +206,27 @@ function Admin() {
                               >
                                 Delete
                               </button>
-                              <button onClick={(e) => approveVolunteer(volunteer.id, e)}>Approve</button>
+                              <button
+                                onClick={(e) =>
+                                  approveVolunteer(volunteer.id, e)
+                                }
+                              >
+                                Approve
+                              </button>
                             </td>
                           </tr>
                         ))}
                     </tbody>
                   </Table>
                 </div>
+
                 <div className="approved-table">
                   <h2>Approved</h2>
+                  <input onChange={(e) => setName(e.target.value)}></input>
+                  <Button onClick={() => approvedNameFilter(name)}>
+                    Filter
+                  </Button>
+                  <Button onClick={() => getApproved()}>Clear Filter</Button>
                   <Table striped bordered hover size="sm" responsive>
                     <thead>
                       <tr>
@@ -225,7 +252,7 @@ function Admin() {
                             <th>{volunteer.dob}</th>
                             <th>{volunteer.mail}</th>
                             <th>{volunteer.number}</th>
-                            <th>{volunteer.address}</th>
+                            <th className="thaddress">{volunteer.address}</th>
                             <th>{volunteer.job}</th>
                             <th>{volunteer.gender}</th>
                             <th>{volunteer.registerdate}</th>
@@ -237,7 +264,13 @@ function Admin() {
                               >
                                 Delete
                               </button>
-                              <button onClick={(e) => unapproveVolunteer(volunteer.id, e)}>Send Back</button>
+                              <button
+                                onClick={(e) =>
+                                  unapproveVolunteer(volunteer.id, e)
+                                }
+                              >
+                                Pending
+                              </button>
                             </td>
                           </tr>
                         ))}

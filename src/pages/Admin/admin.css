@@ -13,10 +13,23 @@
     align-items: center;
 }
 
-.approved-table, .pending-table {
+.volunteer-container .table-responsive {
     max-width: 750px;
-    max-height: 800px;
+    max-height: 600px;
 }
+
+.volunteer-container .table-responsive th {
+    min-width: 100px;
+}
+
+
+
+.volunteer-container .table-responsive .thaddress {
+    min-width: 450px;
+}
+
+
+
 
 .approved-table {
     position: absolute;
