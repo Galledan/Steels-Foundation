@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import "./payment.css";
@@ -18,40 +18,29 @@ function Payment() {
 
   const [focus, setFocus] = useState("");
 
-  const firstRender = useRef(true)
-
   const { t} = useTranslation();
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
     
-   
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false
-      return
-    }
-
-    if (expiry.length === 2) {
-      setExpiry(expiry+'/')
-      
-    }
-  
-  }, [expiry]) 
 
   const validatePayment = () => {
+    const textReg = new RegExp(/[a-zA-Z]/)
+    const numReg = new RegExp(/[0-9]/)
+    const creditReg = new RegExp(/^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/)
+    const expReg = new RegExp(/^(0[1-9]|1[0-2])\/?([0-9]{2})/)
     if (!name || name === '') return false
+    if(!textReg.test(name)) return false
     if (!number || number === '') return false
+    if(!creditReg.test(number)) return false
     if (!expiry || expiry === '') return false
+    if(!expReg.test(expiry)) return false
     if (!cvc || cvc === '') return false
+    if(!numReg.test(cvc)) return false
     else return true
     
   }
-
-  useEffect(() => {
-    ref.current.focus();
-  }, []);
 
 
   const onSubmit = () => {
@@ -59,7 +48,6 @@ function Payment() {
   }
  
 
-  const ref = useRef(null);
   return (
     <div className="Payment">
       <NavigationBar/>
@@ -81,7 +69,6 @@ function Payment() {
             value={number}
             onChange={(e) => setNumber(e.target.value)}
             onFocus={(e) => setFocus(e.target.name)}
-            ref={ref}
           />
           <input
             type="text"

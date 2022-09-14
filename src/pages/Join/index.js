@@ -38,14 +38,29 @@ function Join() {
   
     const validateForm = () => {
       const {address, dob, gender, mail, name, number, job, surname} = form
+      const textReg = new RegExp(/[a-zA-Z]/)
+      const numReg = new RegExp(/[0-9]/)
+      const mailReg = new RegExp(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\w{2,3})+$/)
       const newErrors = {}
+
         if(!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
+
         if(!gender || gender === 'Select Gender') newErrors.gender = 'Please select a gender'
-        if(!address || address === '') newErrors.address = 'Please enter your address '
+
+        if(!address || address === '') newErrors.address = 'Please enter your address'
+
         if(!mail || mail === '') newErrors.mail = 'Please enter your mail'
+        if(!mailReg.test(mail)) newErrors.mail = 'Please enter a valid mail'
+
         if(!name|| name === '') newErrors.name = 'Please enter your name'
+        if(!textReg.test(name)) newErrors.name = 'Please enter a valid name'
+
         if(!surname || surname === '') newErrors.surname = 'Please enter your surname'
+        if(!textReg.test(surname)) newErrors.surname = 'Please enter a valid surname'
+
         if(!number || number === '') newErrors.number = 'Please enter your phone number'
+        if(!numReg.test(number)) newErrors.number = 'Please enter numbers only remove any text'
+
         if(!job || job === 'Select a Job Type') newErrors.reason = 'Please select a job'
 
         return newErrors
@@ -122,7 +137,8 @@ function Join() {
               <Form.Label>{t("Date of Birth")}</Form.Label>
               <Form.Control 
               type="date" 
-              name="join_dob" 
+              name="join_dob"
+              max="2005-01-01"
               placeholder={t("Enter the date of birth")}
               value={form.dob}
               onChange={(e) => setField('dob',e.target.value)}
