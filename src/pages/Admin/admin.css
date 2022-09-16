@@ -8,10 +8,6 @@
     height: 100%;
 }
 
-.volunteer-container{
-    display: flex;
-    align-items: center;
-}
 
 .volunteer-container .table-responsive {
     max-width: 750px;
@@ -28,17 +24,76 @@
     min-width: 450px;
 }
 
-
-
-
 .approved-table {
     position: absolute;
     top: 20%;
     left: 56%;
+    text-align: center;
 }
 
 .pending-table {
     position: absolute;
     top: 20%;
     left: 4%;
+    text-align: center;
+}
+
+.pending-table .btn {
+    margin: 10px auto;
+    margin-left: 20px;
+}
+
+
+.approved-table .btn {
+    margin: 10px auto;
+    margin-left: 20px;
+}
+
+.total {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.donation {
+    position: absolute;
+    top: 18%;
+    left: 10%;
+}
+
+.pending-volunteers {
+    position: absolute;
+    top: 18%;
+    left: 30%;
+}
+
+.approved-volunteers {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+}
+
+.piechart {
+    position: absolute;
+    top: 45%;
+}
+
+.barchart {
+    position: absolute;
+    top: 36%;
+    left: 35%;
+}
+
+.newAdmin {
+    position: absolute;
+    top: 18%;
+    left: 75%;
+    width: 400px;
+}
+
+.adminList {
+    padding-top: 50px;
 }

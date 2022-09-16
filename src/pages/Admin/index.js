@@ -6,15 +6,20 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
 import api from "../../api/data";
-
+import Piechart from "../../components/PieChart";
+import Barchart from "../../components/BarChart";
+import { v4 as uuid } from "uuid";
 function Admin() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [adminname, setAdminname] = useState();
+  const [adminpassword, setAdminPassword] = useState();
   const [loggedIn, isLoggedIn] = useState(false);
 
   const [donators, setDonators] = useState();
   const [pending, setPending] = useState();
   const [approved, setApproved] = useState();
+  const [admin, setAdmin] = useState();
 
   const [name, setName] = useState();
 
@@ -35,12 +40,9 @@ function Admin() {
     getDonators();
   };
 
-  const totalDonation = () => {
-    var td = 0;
-    for (let index = 0; index < donators.length; index++) {
-      td += parseInt(donators[index].donationAmount);
-    }
-    return td;
+  const handleAdminDelete = async (index, e) => {
+    await api.delete("/admin/" + index.toString());
+    getAdmin();
   };
 
   const getDonators = async () => {
@@ -61,18 +63,97 @@ function Admin() {
     });
   };
 
+  const getAdmin = async () => {
+    await api.get("/admin").then((res) => {
+      setAdmin(res.data);
+    });
+  };
+
+  const monthlyDonation = () => {
+    var md = 0;
+    for (let index = 0; index < donators.length; index++) {
+      if (donators[index].donationType === "Monthly")
+        md += parseInt(donators[index].donationAmount);
+    }
+    return md;
+  };
+
+  const educationJob = () => {
+    var j = 0;
+    for (let index = 0; index < approved.length; index++) {
+      if (approved[index].job === "Educational") j += 1;
+    }
+    return j;
+  };
+
+  const medicalJob = () => {
+    var j = 0;
+    for (let index = 0; index < approved.length; index++) {
+      if (approved[index].job === "Medical") j += 1;
+    }
+    return j;
+  };
+
+  const socialJob = () => {
+    var j = 0;
+    for (let index = 0; index < approved.length; index++) {
+      if (approved[index].job === "Social Work") j += 1;
+    }
+    return j;
+  };
+
+  const fundJob = () => {
+    var j = 0;
+    for (let index = 0; index < approved.length; index++) {
+      if (approved[index].job === "Fundraiser") j += 1;
+    }
+    return j;
+  };
+
+  const otherJob = () => {
+    var j = 0;
+    for (let index = 0; index < approved.length; index++) {
+      if (approved[index].job === "Other") j += 1;
+    }
+    return j;
+  };
+
+  const onceDonation = () => {
+    var od = 0;
+    for (let index = 0; index < donators.length; index++) {
+      if (donators[index].donationType === "Once")
+        od += parseInt(donators[index].donationAmount);
+    }
+    return od;
+  };
+
   useEffect(() => {
     getDonators();
     getPending();
     getApproved();
+    getAdmin();
   }, []);
 
-  const onLogin = () => {
-    if (username === "admin" && password === "admin") {
-      isLoggedIn(true);
-    } else {
-      isLoggedIn(false);
-    }
+  const onLogin = async () => {
+    await api
+      .get("/admin?username=" + username)
+      .then((res) => {
+        if (
+          username === res.data[0].username &&
+          password === res.data[0].password
+        )
+          isLoggedIn(true);
+      })
+      .catch(console.log("invalid input"));
+  };
+
+  const addAdmin = async () => {
+    await api.post("/admin", {
+      id: uuid(),
+      username: adminname,
+      password: adminpassword,
+    });
+    getAdmin()
   };
 
   const approveVolunteer = async (index, e) => {
@@ -151,12 +232,93 @@ function Admin() {
           >
             <Tab eventKey="main" title="Main">
               <div className="main-container">
-                <h1>Total Donation</h1>
-                <span>{totalDonation()}</span>
-                <h1>Total Pending Volunteers</h1>
-                <span>{pending.length}</span>
-                <h1>Total Approved Volunteers</h1>
-                <span>{approved.length}</span>
+                <h3>Welcome {username}</h3>
+                <div className="total donation">
+                  <h2>Total Donation</h2>
+                  <span>{onceDonation() + monthlyDonation()} $</span>
+                </div>
+                <div className="total pending-volunteers">
+                  <h2>Total Pending Volunteers</h2>
+                  <span>{pending.length}</span>
+                </div>
+
+                <div className="total approved-volunteers">
+                  <h2>Total Approved Volunteers</h2>
+                  <span>{approved.length}</span>
+                </div>
+                <div className="piechart">
+                  <Piechart once={onceDonation()} monthly={monthlyDonation()} />
+                </div>
+                <div className="barchart">
+                  <Barchart
+                    education={educationJob()}
+                    medical={medicalJob()}
+                    social={socialJob()}
+                    fund={fundJob()}
+                    other={otherJob()}
+                  />
+                </div>
+                <div className="newAdmin">
+                  <div className="adminForm">
+                    <h3>Add Admin</h3>
+                    <Form>
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder="This will be your admin name"
+                          value={adminname}
+                          onChange={(e) => setAdminname(e.target.value)}
+                        />
+                      </Form.Group>
+                      <Form.Group
+                        className="mb-3"
+                        controlId="formBasicPassword"
+                      >
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                          type="password"
+                          placeholder="Password"
+                          value={adminpassword}
+                          onChange={(e) => setAdminPassword(e.target.value)}
+                        />
+                      </Form.Group>
+                      <Button variant="primary" onClick={addAdmin}>
+                        Add Admin
+                      </Button>
+                    </Form>
+                  </div>
+                  <div className="adminList">
+                    <Table striped bordered hover size="sm" responsive>
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Username</th>
+                          <th>Password</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {admin &&
+                          admin.map((member, i) => (
+                            <tr key={i}>
+                              <th>{i + 1}</th>
+                              <th>{member.username}</th>
+                              <th>{member.password}</th>
+                              <td>
+                                <button
+                                  onClick={(e) =>
+                                    handleAdminDelete(member.id, e)
+                                  }
+                                >
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </Table>
+                  </div>
+                </div>
               </div>
             </Tab>
 
@@ -294,6 +456,7 @@ function Admin() {
                         <th>Address</th>
                         <th>Donation Type</th>
                         <th>Donation Amount</th>
+                        <th>Donation Date</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -308,6 +471,7 @@ function Admin() {
                             <th>{donator.address}</th>
                             <th>{donator.donationType}</th>
                             <th>{donator.donationAmount}</th>
+                            <th>{donator.donationDate}</th>
                             <td>
                               <button
                                 onClick={(e) =>
