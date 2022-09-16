@@ -147,6 +147,10 @@ function Admin() {
       .catch(console.log("invalid input"));
   };
 
+  const onLogout = () => {
+    isLoggedIn(false)
+  }
+
   const addAdmin = async () => {
     await api.post("/admin", {
       id: uuid(),
@@ -233,6 +237,7 @@ function Admin() {
             <Tab eventKey="main" title="Main">
               <div className="main-container">
                 <h3>Welcome {username}</h3>
+                <Button className="logout" onClick={onLogout}>Log Out</Button>
                 <div className="total donation">
                   <h2>Total Donation</h2>
                   <span>{onceDonation() + monthlyDonation()} $</span>
@@ -305,13 +310,13 @@ function Admin() {
                               <th>{member.username}</th>
                               <th>{member.password}</th>
                               <td>
-                                <button
+                                <Button
                                   onClick={(e) =>
                                     handleAdminDelete(member.id, e)
                                   }
                                 >
                                   Delete
-                                </button>
+                                </Button>
                               </td>
                             </tr>
                           ))}
@@ -361,20 +366,20 @@ function Admin() {
                             <th>{volunteer.gender}</th>
                             <th>{volunteer.registerdate}</th>
                             <td>
-                              <button
+                              <Button
                                 onClick={(e) =>
                                   handlePendingDelete(volunteer.id, e)
                                 }
                               >
                                 Delete
-                              </button>
-                              <button
+                              </Button>
+                              <Button
                                 onClick={(e) =>
                                   approveVolunteer(volunteer.id, e)
                                 }
                               >
                                 Approve
-                              </button>
+                              </Button>
                             </td>
                           </tr>
                         ))}
@@ -419,20 +424,20 @@ function Admin() {
                             <th>{volunteer.gender}</th>
                             <th>{volunteer.registerdate}</th>
                             <td>
-                              <button
+                              <Button
                                 onClick={(e) =>
                                   handleApprovedDelete(volunteer.id, e)
                                 }
                               >
                                 Delete
-                              </button>
-                              <button
+                              </Button>
+                              <Button
                                 onClick={(e) =>
                                   unapproveVolunteer(volunteer.id, e)
                                 }
                               >
                                 Pending
-                              </button>
+                              </Button>
                             </td>
                           </tr>
                         ))}
