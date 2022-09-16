@@ -1,0 +1,112 @@
+{
+  "pending": [],
+  "approved": [
+    {
+      "id": "6e39c3b6-f361-4227-b24a-23bd0c8bf0bd",
+      "name": "Ebru",
+      "surname": "Sepetçi",
+      "dob": "1993-10-23",
+      "mail": "drebrus@gmail.com",
+      "number": "03243276950",
+      "address": "Mersin Mezitli Menderes Mh. Hilal Sokak Ayşe Apt No 5",
+      "job": "Medical",
+      "gender": "F",
+      "registerdate": "2022-9-15"
+    },
+    {
+      "id": "bc8696f4-1147-4cef-972c-e6f258d3c9f6",
+      "name": "Nathaniel",
+      "surname": "Feeney",
+      "dob": "1980-05-16",
+      "mail": "nathanfe@rapide.com",
+      "number": "07856595788",
+      "address": "27 Eastbourne Rd COLDWELLS AB42 0ZU",
+      "job": "Educational",
+      "gender": "M",
+      "registerdate": "2022-9-15"
+    },
+    {
+      "id": "7285c9a6-b22c-404d-b7b2-37330a7d62a2",
+      "name": "Esther",
+      "surname": "Peralta",
+      "dob": "1989-11-01",
+      "mail": "esther@teleworm.us",
+      "number": "9524874582",
+      "address": "131 Oral Lake Road Minneapolis, MN 55415",
+      "job": "Medical",
+      "gender": "F",
+      "registerdate": "2022-9-15"
+    },
+    {
+      "id": "66b5fd6d-91f2-48f9-a8cf-5332b0694dad",
+      "name": "Vivian",
+      "surname": "Persaud",
+      "dob": "1996-04-10",
+      "mail": "vivian@dayrep.com",
+      "number": "3143249510",
+      "address": "3871 Bruce Street Maryland Heights, MO 63043",
+      "job": "Social Work",
+      "gender": "F",
+      "registerdate": "2022-9-15"
+    },
+    {
+      "id": "ab10f54a-e694-436d-901c-1b38e1aa82b3",
+      "name": "Canberk",
+      "surname": "Poyrazoğlu",
+      "dob": "1990-10-18",
+      "mail": "canberkp@gmail.co",
+      "number": "02323656172",
+      "address": "İzmir Karşıyaka Bahçelievler Mh Atatürk Sokak Kule Apt No 3",
+      "job": "Other",
+      "gender": "M",
+      "registerdate": "2022-9-15"
+    }
+  ],
+  "donators": [
+    {
+      "name": "Esma",
+      "surname": "Ekici",
+      "mail": "esmaekici@gmail.co",
+      "number": "02122415383",
+      "address": "İstanbul Şişli Teşvikiye Mh. Yiğit Sokak No 5 Daire 3",
+      "donationType": "Once",
+      "donationAmount": "20",
+      "donateDate": "2022-9-15",
+      "id": 1
+    },
+    {
+      "name": "Göktürk",
+      "surname": "Sarıoğlu",
+      "mail": "drgokturksarioglu@gmail.co",
+      "number": "02425131014",
+      "address": "Antalya Alanya Saray Mh. ",
+      "donationType": "Monthly",
+      "donationAmount": "10",
+      "donateDate": "2022-9-15",
+      "id": 2
+    },
+    {
+      "name": "İrem",
+      "surname": "Tuğlu",
+      "mail": "iremtuglu@gmail.co",
+      "number": "02427428721",
+      "address": "Antalya Manavgat Bahçelievler Mh.",
+      "donationType": "Monthly",
+      "donationAmount": "5",
+      "donateDate": "2022-9-15",
+      "id": 3
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "username": "onrclklr",
+      "password": "123"
+    }
+  ]
+}

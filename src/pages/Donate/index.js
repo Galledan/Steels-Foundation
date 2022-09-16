@@ -42,6 +42,13 @@ function Donate() {
       });
   };
 
+  var today = new Date(),
+  date =
+    today.getFullYear() +
+    "-" +
+    (today.getMonth() + 1) +
+    "-" +
+    today.getDate();
 
 
   const getRadioValue = () => {
@@ -55,15 +62,19 @@ function Donate() {
     getRadioValue()
   })
 
-  const textReg = new RegExp(/[a-zA-Z]/)
-  const numReg = new RegExp(/[0-9]/)
-  const mailReg = new RegExp(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\w{2,3})+$/)
+  const textReg = new RegExp(/^([a-zA-ZğüşöçıİĞÜŞÖÇ]){2,30}$/);
+    const numReg = new RegExp(/[0-9]/);
+    const mailReg = new RegExp(
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    );
+    const addressReg = new RegExp(/^[a-zA-ZğüşöçıİĞÜŞÖÇ0-9\s,.'-]{3,}$/)
 
   const validateForm = () => {
     const { address, mail, name, number, surname } = form;
     const newErrors = {};
     if (!address || address === "")
       newErrors.address = "Please enter your address ";
+      if (!addressReg.test(address)) newErrors.address = "Please enter a valid address";
     if (!mail || mail === "") newErrors.mail = "Please enter your mail";
     if(!mailReg.test(mail)) newErrors.mail = 'Please enter a valid mail'
     if (!name || name === "") newErrors.name = "Please enter your name";
@@ -102,7 +113,8 @@ function Donate() {
         number: form.number,
         address: form.address,
         donationType: selectedRadio,
-        donationAmount: amount
+        donationAmount: amount,
+        donateDate: date
       })
       .then(res => {
         console.log(res.data);
