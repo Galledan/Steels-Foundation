@@ -3,6 +3,8 @@
     background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 83%);
 }
 
+@media (min-width:1024px){
+
 .join-container h1{
     position: absolute;
     width: 500px;
@@ -64,4 +66,60 @@ left: 3%;
 
 .form-container .form-label {
     font-weight: 600;
+}
+}
+
+/* Phone CSS*/
+
+@media (max-width:425px){
+
+    .join-container, .form-container {
+        width: 100%;
+    }
+
+    .join-container{
+        text-align: center;
+    }
+
+    .join-container h1{
+        position: absolute;
+        top: 8%;
+        left: 40%;
+        
+        font-size: 20px;
+        color: rgb(143, 169, 255);
+    }
+    
+    .join-container p{
+        position: absolute;
+        top: 12%;
+        font-size: 15px;
+        padding-inline: 20px;
+        color: white;
+    }
+    
+    .form-container {
+        position: relative;
+        padding: 10px 10px 0 10px;
+        height: 600px;
+        color: black;
+        background-color: white;
+        max-width: 425px;
+    }
+    
+    .Join .bg {
+        max-width: 100%;
+        opacity: 0.65;
+    }
+    
+    
+    .form-container .form-control {
+        box-shadow: 1px 1px ;
+    }
+    
+    .form-container button {
+        margin: 1em auto 2em;
+        padding-inline: 165px;
+    }
+    
 }

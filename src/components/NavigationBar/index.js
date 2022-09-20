@@ -18,10 +18,10 @@ const NavigationBar = () => {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="xl" fixed="top">
+    <Navbar bg="dark" expand='sm' variant="dark" fixed="top">
       <Container>
         <Navbar.Brand href="/">
-          <img src={require("../../images/logo.png")} alt="logo" width={300} />
+          <img className="logo" src={require("../../images/logo.png")} alt="logo" width={300} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">

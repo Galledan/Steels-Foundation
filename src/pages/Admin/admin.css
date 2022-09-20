@@ -1,6 +1,8 @@
+@media (min-width:1024px){
+
 .Admin{
     height: 970px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(245, 245, 245);
 }
 
 .login-container {
@@ -51,20 +53,25 @@
 }
 
 .total {
-    border-radius: 25px;
+    border-radius: 5px;
     width: 300px;
     height: 150px;
     text-align: center;
-    font-size: 40px;
     background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
 }
 
-.total:hover {
-    color: white;
-   background: #1095c1;
-transition: .4s;
+.total p{
+    font-size: 15px;
+    margin: 5px 100px 20px 0px;
+    color: grey;
+
 }
 
+.total span{
+    font-size: 40px;
+    font-weight: 300;
+}
 
 .donation {
     position: absolute;
@@ -85,21 +92,32 @@ transition: .4s;
 }
 
 .piechart {
+    border-radius: 5px;
     position: absolute;
     top: 45%;
+    left: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 .barchart {
+    border-radius: 5px;
     position: absolute;
     top: 36%;
     left: 35%;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 .newAdmin {
+    border-radius: 5px;
     position: absolute;
-    top: 18%;
+    top: 30%;
     left: 75%;
     width: 400px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 .adminList {
@@ -112,3 +130,136 @@ transition: .4s;
  left: 4%;
 }
 
+}
+
+@media (max-width:425px) {
+    .Admin{
+        height: 2000px;
+        background-color: rgb(245, 245, 245);
+    }
+    
+    .login-container {
+        display: grid;
+        place-items: center;
+        height: 100%;
+    }
+
+    .login-container img {
+        width: 400px;
+    }
+
+
+    .login-container form{
+        padding-inline: 30px;
+        width: 425px;
+    }
+    
+    
+    .volunteer-container .table-responsive {
+        max-width: 400px;
+        max-height: 600px;
+    }
+    
+    .volunteer-container .table-responsive th {
+        min-width: 100px;
+    }
+    
+    
+    
+    .volunteer-container .table-responsive .thaddress {
+        min-width: 450px;
+    }
+    
+    .approved-table {
+        position: absolute;
+        top: 1000px;
+        text-align: center;
+    }
+    
+    .pending-table {
+        position: absolute;
+        top: 100px;
+        text-align: center;
+    }
+    
+    .pending-table .btn {
+        margin: 10px auto;
+        margin-left: 20px;
+    }
+    
+    
+    .approved-table .btn {
+        margin: 10px auto;
+        margin-left: 20px;
+    }
+    
+    .total {
+        border-radius: 5px;
+        width: 300px;
+        height: 150px;
+        text-align: center;
+        background-color: white;
+        box-shadow: 10px 10px 5px #aaaaaa;
+    }
+    
+    .total p{
+        font-size: 15px;
+        margin: 5px 100px 20px 0px;
+        color: grey;
+    
+    }
+    
+    .total span{
+        font-size: 40px;
+        font-weight: 300;
+    }
+    
+    .donation {
+        position: absolute;
+        top: 170px;
+        max-width: 425px;
+        left: 20%;
+    }
+    
+    .pending-volunteers {
+        position: absolute;
+        top: 370px;
+        left: 20%;
+    }
+    
+    .approved-volunteers {
+        position: absolute;
+        top: 570px;
+        left: 20%;
+    }
+    
+    .piechart {
+        position: absolute;
+        top: 770px;
+        left: 20px;
+    }
+
+    .barchart {
+        position: absolute;
+        top: 1070px;
+        
+    }
+    
+    .newAdmin {
+        position: absolute;
+        top: 1500px;
+        width: 400px;
+        padding: 20px;
+      
+    }
+    
+    .adminList {
+        padding-top: 50px;
+    }
+    
+    .logout {
+     position: absolute;
+     left: 4%;
+    }
+    
+}

@@ -239,16 +239,16 @@ function Admin() {
                 <h3>Welcome {username}</h3>
                 <Button className="logout" onClick={onLogout}>Log Out</Button>
                 <div className="total donation">
-                  <h2>Total Donation</h2>
+                  <p>Total Donation Revenue</p>
                   <span>{onceDonation() + monthlyDonation()} $</span>
                 </div>
                 <div className="total pending-volunteers">
-                  <h2>Total Pending Volunteers</h2>
+                  <p>Total Pending Volunteers</p>
                   <span>{pending.length}</span>
                 </div>
 
                 <div className="total approved-volunteers">
-                  <h2>Total Approved Volunteers</h2>
+                  <p>Total Approved Volunteers</p>
                   <span>{approved.length}</span>
                 </div>
                 <div className="piechart">
@@ -450,7 +450,7 @@ function Admin() {
             <Tab eventKey="donation" title="Donations">
               <div className="donator-container">
                 <div className="donator-table">
-                  <Table striped bordered hover>
+                  <Table striped bordered hover size="sm" responsive>
                     <thead>
                       <tr>
                         <th>#</th>

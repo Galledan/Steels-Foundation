@@ -14,7 +14,18 @@ function Piechart(donation) {
             title:{
                 text:'Donation Chart'
             },
-            colors:['#00385C','#5C0F00']
+            colors:['#00385C','#5C0F00'],
+            responsive: [
+              {
+                breakpoint: 1024,
+                options: {
+                  chart: {
+                    width: 400,
+                    height: 400
+                  }
+                }
+              }
+            ]
         }}
         >
 

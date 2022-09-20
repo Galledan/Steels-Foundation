@@ -21,6 +21,18 @@ function Barchart(job) {
           title: {
             text: "Job Chart",
           },
+          responsive: [
+            {
+              breakpoint: 1024,
+              options: {
+                chart: {
+                  width: 400,
+                  height: 400
+                }
+              }
+            }
+          ]
+          
         }}
       ></Chart>
     </div>

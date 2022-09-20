@@ -61,6 +61,16 @@ function Home() {
         </Carousel>
       </div>
 
+      <div className="sdg-container">
+        <h1>{t("What is 'Sustainable Development Goals' Project?")}</h1>
+        <p>
+        {t("The Sustainable Development Goals are a call for action by all countries – poor, rich and middle-income – to promote prosperity while protecting the planet. They recognize that ending poverty must go hand-in-hand with strategies that build economic growth and address a range of social needs including education, health, social protection, and job opportunities, while tackling climate change and environmental protection. More important than ever, the goals provide a critical framework for COVID-19 recovery.")}
+        </p>
+        <img
+          src={require("../../images/sdg.png")}
+          alt="sdg"
+        />
+      </div>
       <div className="why-text">
         <h1>{t("Why Quality Education is Important?")}</h1>
         <p>
@@ -72,8 +82,6 @@ function Home() {
         <img
           src={require("../../images/student.jpg")}
           alt="std"
-          width={800}
-          height={530}
         />
       </div>
       <div className="con">

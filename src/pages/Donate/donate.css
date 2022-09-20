@@ -3,6 +3,8 @@
   background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.164) 83%);
 }
 
+@media (min-width:1024px) {
+
 .options-side,
 .info-side {
   height: 1000px;
@@ -50,3 +52,61 @@
   left: 69%;
 }
 
+}
+
+/* Phone CSS */
+
+@media (max-width:425px) {
+
+  .options-side {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.options-side {
+  background-color: rgba(0, 0, 0, 0.699);
+  background-size: cover;
+  background-image: url("../../images/students3.jpg");
+  background-blend-mode:hue;
+}
+
+.options-side h1 {
+  position: absolute;
+  text-align: center;
+  top: 15%;
+  left: 6%;
+  color: white;
+}
+
+.info-side {
+  height: 650px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.info-container {
+  position: absolute;
+  color: black;
+  top: 45%;
+  padding: 20px;
+  max-width: 425px;
+}
+
+.donation-container {
+  position: absolute;
+  text-align: center;
+  top: 33%;
+  left: 25%;
+  color: black;
+}
+
+.toolbar {
+  position: absolute;
+  text-align: center;
+  top: 42%;
+  left: 20%;
+}
+
+
+}
