@@ -21,7 +21,6 @@ function Barchart(job) {
           title: {
             text: "Job Chart",
           },
-<<<<<<< HEAD
           responsive: [
             {
               breakpoint: 1024,
@@ -34,8 +33,6 @@ function Barchart(job) {
             }
           ]
           
-=======
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
         }}
       ></Chart>
     </div>

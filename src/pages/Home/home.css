@@ -3,11 +3,8 @@
   background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.164) 83%);
 }
 
-<<<<<<< HEAD
 @media (min-width:1024px) {
     
-=======
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 .carousel {
     height: 800px;
     overflow: hidden;
@@ -34,25 +31,14 @@
 }
 
 
-<<<<<<< HEAD
 .why-text, .sdg-container {
     height: 500px;
-=======
-.why-text {
-    height: 650px;
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
     padding-top: 20px;
 }
 
 .why-text h1 {
-<<<<<<< HEAD
     padding-top: 20px;
     padding-left: 140px;
-=======
-    padding-top: 120px;
-    padding-left: 140px;
-    border-bottom: 2px black;
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 }
 
 .why-text p {
@@ -62,17 +48,11 @@
 
 .why-text img {
     position: absolute;
-<<<<<<< HEAD
     top: 1240px;
     left: 950px;
     border-radius: 8px;
     width:800px;
     height:530px;
-=======
-    top: 840px;
-    left: 950px;
-    border-radius: 8px;
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 }
 
 .supply-container, .edu-container, .spo-container,.don-container {
@@ -100,11 +80,7 @@
 
 .supply-container .btn {
     position: absolute;
-<<<<<<< HEAD
     top: 205%;
-=======
-    top: 175%;
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
     left: 75%;
     font-size: 35px;
     
@@ -130,11 +106,7 @@
 
 .edu-container .btn {
     position: absolute;
-<<<<<<< HEAD
     top: 260%;
-=======
-    top: 228%;
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
     right: 75%;
     font-size: 35px;
     
@@ -192,7 +164,6 @@
 
 .don-container h1 {
     padding-top: 40px;
-<<<<<<< HEAD
 }
 
 .sdg-container img {
@@ -404,6 +375,4 @@ body {
     }
     
 
-=======
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 }

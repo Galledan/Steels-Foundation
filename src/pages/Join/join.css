@@ -3,11 +3,8 @@
     background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 83%);
 }
 
-<<<<<<< HEAD
 @media (min-width:1024px){
 
-=======
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 .join-container h1{
     position: absolute;
     width: 500px;
@@ -69,7 +66,6 @@ left: 3%;
 
 .form-container .form-label {
     font-weight: 600;
-<<<<<<< HEAD
 }
 }
 
@@ -126,6 +122,4 @@ left: 3%;
         padding-inline: 165px;
     }
     
-=======
->>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 }
