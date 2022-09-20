@@ -239,16 +239,28 @@ function Admin() {
                 <h3>Welcome {username}</h3>
                 <Button className="logout" onClick={onLogout}>Log Out</Button>
                 <div className="total donation">
+<<<<<<< HEAD
                   <p>Total Donation Revenue</p>
                   <span>{onceDonation() + monthlyDonation()} $</span>
                 </div>
                 <div className="total pending-volunteers">
                   <p>Total Pending Volunteers</p>
+=======
+                  <h2>Total Donation</h2>
+                  <span>{onceDonation() + monthlyDonation()} $</span>
+                </div>
+                <div className="total pending-volunteers">
+                  <h2>Total Pending Volunteers</h2>
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
                   <span>{pending.length}</span>
                 </div>
 
                 <div className="total approved-volunteers">
+<<<<<<< HEAD
                   <p>Total Approved Volunteers</p>
+=======
+                  <h2>Total Approved Volunteers</h2>
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
                   <span>{approved.length}</span>
                 </div>
                 <div className="piechart">
@@ -450,7 +462,11 @@ function Admin() {
             <Tab eventKey="donation" title="Donations">
               <div className="donator-container">
                 <div className="donator-table">
+<<<<<<< HEAD
                   <Table striped bordered hover size="sm" responsive>
+=======
+                  <Table striped bordered hover>
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
                     <thead>
                       <tr>
                         <th>#</th>

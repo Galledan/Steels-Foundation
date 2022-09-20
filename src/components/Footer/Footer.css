@@ -35,6 +35,7 @@
 .main-footer p {
 text-align: center;
 }
+<<<<<<< HEAD
 
 
 @media (max-width:425px) {
@@ -43,3 +44,5 @@ text-align: center;
     width: 425px;
   }
 }
+=======
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052

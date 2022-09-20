@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 @media (min-width:1024px){
 
 .Admin{
     height: 970px;
     background-color: rgb(245, 245, 245);
+=======
+.Admin{
+    height: 970px;
+    background-color: rgb(240, 240, 240);
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 }
 
 .login-container {
@@ -53,6 +59,7 @@
 }
 
 .total {
+<<<<<<< HEAD
     border-radius: 5px;
     width: 300px;
     height: 150px;
@@ -73,6 +80,23 @@
     font-weight: 300;
 }
 
+=======
+    border-radius: 25px;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    font-size: 40px;
+    background-color: white;
+}
+
+.total:hover {
+    color: white;
+   background: #1095c1;
+transition: .4s;
+}
+
+
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 .donation {
     position: absolute;
     top: 18%;
@@ -92,6 +116,7 @@
 }
 
 .piechart {
+<<<<<<< HEAD
     border-radius: 5px;
     position: absolute;
     top: 45%;
@@ -118,6 +143,23 @@
     background-color: white;
     padding: 20px;
     box-shadow: 10px 10px 5px #aaaaaa;
+=======
+    position: absolute;
+    top: 45%;
+}
+
+.barchart {
+    position: absolute;
+    top: 36%;
+    left: 35%;
+}
+
+.newAdmin {
+    position: absolute;
+    top: 18%;
+    left: 75%;
+    width: 400px;
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 }
 
 .adminList {
@@ -130,6 +172,7 @@
  left: 4%;
 }
 
+<<<<<<< HEAD
 }
 
 @media (max-width:425px) {
@@ -263,3 +306,5 @@
     }
     
 }
+=======
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052

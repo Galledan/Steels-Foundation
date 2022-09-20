@@ -3,8 +3,11 @@
   background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.164) 83%);
 }
 
+<<<<<<< HEAD
 @media (min-width:1024px) {
 
+=======
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
 .options-side,
 .info-side {
   height: 1000px;
@@ -52,6 +55,7 @@
   left: 69%;
 }
 
+<<<<<<< HEAD
 }
 
 /* Phone CSS */
@@ -110,3 +114,5 @@
 
 
 }
+=======
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052

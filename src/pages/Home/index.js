@@ -71,6 +71,8 @@ function Home() {
           alt="sdg"
         />
       </div>
+
+
       <div className="why-text">
         <h1>{t("Why Quality Education is Important?")}</h1>
         <p>

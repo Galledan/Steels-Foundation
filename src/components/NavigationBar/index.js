@@ -21,7 +21,11 @@ const NavigationBar = () => {
     <Navbar bg="dark" expand='sm' variant="dark" fixed="top">
       <Container>
         <Navbar.Brand href="/">
+<<<<<<< HEAD
           <img className="logo" src={require("../../images/logo.png")} alt="logo" width={300} />
+=======
+          <img src={require("../../images/logo.png")} alt="logo" width={300} />
+>>>>>>> 13692cbba9e36ef66fccecf3d0119046e5656052
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
