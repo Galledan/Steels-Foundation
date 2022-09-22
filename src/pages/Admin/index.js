@@ -219,7 +219,7 @@ function Admin() {
                 className="mb-3"
                 controlId="formBasicCheckbox"
               ></Form.Group>
-              <Button variant="primary" onClick={onLogin}>
+              <Button variant="success" onClick={onLogin}>
                 Login
               </Button>
             </Form>
@@ -237,7 +237,7 @@ function Admin() {
             <Tab eventKey="main" title="Main">
               <div className="main-container">
                 <h3>Welcome {username}</h3>
-                <Button className="logout" onClick={onLogout}>Log Out</Button>
+                <Button className="logout" variant="success" onClick={onLogout}>Log Out</Button>
                 <div className="total donation">
                   <p>Total Donation Revenue</p>
                   <span>{onceDonation() + monthlyDonation()} $</span>
@@ -288,7 +288,7 @@ function Admin() {
                           onChange={(e) => setAdminPassword(e.target.value)}
                         />
                       </Form.Group>
-                      <Button variant="primary" onClick={addAdmin}>
+                      <Button variant="success" onClick={addAdmin}>
                         Add Admin
                       </Button>
                     </Form>
@@ -311,6 +311,7 @@ function Admin() {
                               <th>{member.password}</th>
                               <td>
                                 <Button
+                                variant="success"
                                   onClick={(e) =>
                                     handleAdminDelete(member.id, e)
                                   }
@@ -332,10 +333,10 @@ function Admin() {
                 <div className="pending-table">
                   <h2>Pending</h2>
                   <input onChange={(e) => setName(e.target.value)}></input>
-                  <Button onClick={() => pendingNameFilter(name)}>
+                  <Button variant="success" onClick={() => pendingNameFilter(name)}>
                     Filter
                   </Button>
-                  <Button onClick={() => getPending()}>Clear Filter</Button>
+                  <Button variant="success" onClick={() => getPending()}>Clear Filter</Button>
                   <Table striped bordered hover size="sm" responsive>
                     <thead>
                       <tr>
@@ -367,6 +368,7 @@ function Admin() {
                             <th>{volunteer.registerdate}</th>
                             <td>
                               <Button
+                              variant="success"
                                 onClick={(e) =>
                                   handlePendingDelete(volunteer.id, e)
                                 }
@@ -374,6 +376,7 @@ function Admin() {
                                 Delete
                               </Button>
                               <Button
+                              variant="success"
                                 onClick={(e) =>
                                   approveVolunteer(volunteer.id, e)
                                 }
@@ -390,10 +393,10 @@ function Admin() {
                 <div className="approved-table">
                   <h2>Approved</h2>
                   <input onChange={(e) => setName(e.target.value)}></input>
-                  <Button onClick={() => approvedNameFilter(name)}>
+                  <Button variant="success"onClick={() => approvedNameFilter(name)}>
                     Filter
                   </Button>
-                  <Button onClick={() => getApproved()}>Clear Filter</Button>
+                  <Button variant="success" onClick={() => getApproved()}>Clear Filter</Button>
                   <Table striped bordered hover size="sm" responsive>
                     <thead>
                       <tr>
@@ -425,6 +428,7 @@ function Admin() {
                             <th>{volunteer.registerdate}</th>
                             <td>
                               <Button
+                              variant="success"
                                 onClick={(e) =>
                                   handleApprovedDelete(volunteer.id, e)
                                 }
@@ -432,6 +436,7 @@ function Admin() {
                                 Delete
                               </Button>
                               <Button
+                              variant="success"
                                 onClick={(e) =>
                                   unapproveVolunteer(volunteer.id, e)
                                 }
@@ -478,13 +483,14 @@ function Admin() {
                             <th>{donator.donationAmount}</th>
                             <th>{donator.donationDate}</th>
                             <td>
-                              <button
+                              <Button
+                              variant="success"
                                 onClick={(e) =>
                                   handleDonationDelete(donator.id, e)
                                 }
                               >
                                 Delete
-                              </button>
+                              </Button>
                             </td>
                           </tr>
                         ))}

@@ -1,15 +1,32 @@
+.Admin .nav-link {
+    background-color:rgba(134,69,67,255)!important ;
+    color: rgba(230, 211, 196, 255)!important;
+}
+
+.main-container h3 {
+    color: rgba(134,69,67,255);
+}
+
 @media (min-width:1024px){
 
 .Admin{
     height: 970px;
-    background-color: rgb(245, 245, 245);
+    background: rgb(176,161,147);
+    background: linear-gradient(0deg, rgba(176,161,147,1) 0%, rgba(229,213,199,1) 100%);
 }
 
 .login-container {
     display: grid;
     place-items: center;
     height: 100%;
+    color: rgba(134,69,67,255);
 }
+
+.login-container button {
+position: absolute;
+left: 48%;
+}
+
 
 
 .volunteer-container .table-responsive {
@@ -19,6 +36,7 @@
 
 .volunteer-container .table-responsive th {
     min-width: 100px;
+    color: rgba(230, 211, 196, 255);
 }
 
 
@@ -28,17 +46,35 @@
 }
 
 .approved-table {
+    padding-top: 10px;
     position: absolute;
     top: 20%;
     left: 56%;
     text-align: center;
+    background-color: rgba(134,69,67,255);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    color: rgba(230, 211, 196, 255);
+    border-radius: 5px;
 }
 
 .pending-table {
+    padding-top: 10px;
     position: absolute;
     top: 20%;
     left: 4%;
     text-align: center;
+    border-radius: 5px;
+    background-color: rgba(134,69,67,255);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    color: rgba(230, 211, 196, 255);
+    
+}
+
+.donator-table {
+    background-color: rgba(134,69,67,255);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    color: rgba(230, 211, 196, 255);
+    
 }
 
 .pending-table .btn {
@@ -57,14 +93,15 @@
     width: 300px;
     height: 150px;
     text-align: center;
-    background-color: white;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    background-color: rgba(134,69,67,255);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    color: rgba(230, 211, 196, 255);
 }
 
 .total p{
     font-size: 15px;
     margin: 5px 100px 20px 0px;
-    color: grey;
+
 
 }
 
@@ -89,6 +126,7 @@
     position: absolute;
     top: 18%;
     left: 50%;
+    
 }
 
 .piechart {
@@ -96,8 +134,9 @@
     position: absolute;
     top: 45%;
     left: 20px;
-    background-color: white;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    background-color: rgba(134,69,67,255);
+    color: rgba(230, 211, 196, 255);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .barchart {
@@ -105,8 +144,9 @@
     position: absolute;
     top: 36%;
     left: 35%;
-    background-color: white;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    background-color: rgba(134,69,67,255);
+    
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .newAdmin {
@@ -115,9 +155,10 @@
     top: 30%;
     left: 75%;
     width: 400px;
-    background-color: white;
+    background-color: rgba(134,69,67,255);
+    color: rgba(230, 211, 196, 255);
     padding: 20px;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .adminList {
@@ -199,7 +240,7 @@
         height: 150px;
         text-align: center;
         background-color: white;
-        box-shadow: 10px 10px 5px #aaaaaa;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     }
     
     .total p{

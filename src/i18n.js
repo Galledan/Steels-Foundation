@@ -23,11 +23,7 @@ const resources = {
       "Donate":"Bağış Yap",
       "Volunteer for children and be a part of our non-profit foundation. Help us to give children a quality education which is their right.":"Gönüllü olarak kâr gütmeyen vakfımıza katılın ve çocuklara nitelikli eğitim vermemize yardımcı olun.",
       "Our partners":"Partnerlerimiz",
-      "Latest Donations":"Son Yapılan Bağışlar",
-      "donated":"bağış yaptı",
 
-
-      "You are about to change a child's life!":"Bir çocuğun hayatını değiştirmek üzeresin!",
       "Amount of money":"Bağış miktarı",
       "Your Info":"Bilgileriniz",
       "Name":"Adınız",
@@ -42,12 +38,12 @@ const resources = {
       "Your address here":"Adresinizi giriniz",
       "Please select a donate type":"Bağış tipini seçiniz",
       "Go to Payment":"Ödemeye geçin",
+      "Credit Card Info":"Kredi Kartı Bilgileriniz",
 
       "Card Number":"Kart Numarası",
       "Full Name":"Kart Üzerindeki İsim",
       "MM/YY":"AA/YY",
       "Thanks for your donation!":"Bağışınız için teşekkürler!",
-      "You can be sure this money will be used to change a life of a child.":"Bu paranın bir çocuğun hayatının değişmesi için kullanılacağından şüpheniz olmasın.",
       "Pay":"Öde",
 
       "Your name here":"Adınızı yazınız",

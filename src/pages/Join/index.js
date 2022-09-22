@@ -265,7 +265,7 @@ function Join() {
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Button variant="primary" size="lg" onClick={handleSubmit}>
+          <Button variant="success" size="lg" onClick={handleSubmit}>
             {t("Register")}
           </Button>
 

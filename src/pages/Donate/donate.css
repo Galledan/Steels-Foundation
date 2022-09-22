@@ -1,112 +1,158 @@
-.Donate {
-  background: rgb(2,0,36);
-  background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.164) 83%);
-}
+@media (min-width: 1024px) {
+  .Donate {
+    background: rgb(176,161,147);
+    background: linear-gradient(0deg, rgba(176,161,147,1) 0%, rgba(229,213,199,1) 100%);
+  }
+  
 
-@media (min-width:1024px) {
+  .info-side {
+    height: 1000px;
+    overflow: hidden;
+    
+  }
 
-.options-side,
-.info-side {
-  height: 1000px;
-  width: 50%;
-  overflow: hidden;
-}
+  .donation-container {
+    position: absolute;
+    text-align: center;
+    top: 60px;
+    left: 25px;
+  }
 
-.options-side {
-  background-color: rgba(0, 0, 0, 0.699);
-  background-size: cover;
-  background-image: url("../../images/students3.jpg");
-  float: left;
-  background-blend-mode:hue;
-}
+  .info-container {
+    position: absolute;
+    top: 25%;
+    left: 12%;
+    padding: 20px;
+    background-color:rgba(134,69,67,255) ;
+    color: rgba(230,211,196,255);
+  }
 
-.options-side h1 {
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 6%;
-  color: white;
-}
+  .info-container form {
+    position: absolute;
+    top: 250px;
+    width: 500px;
+  }
 
-.info-container {
-  position: absolute;
-  color: black;
-  top: 40%;
-  left: 62%;
-  padding: 20px;
-  max-width: 500px;
-}
+  .info-container h3 {
+    padding: 0px 0 20px 190px;
+  }
 
-.donation-container {
-  position: absolute;
-  text-align: center;
-  top: 23%;
-  left: 70%;
-  color: black;
-}
+  .payment-container h3 {
+    padding: 20px 0 40px 160px;
+  }
 
-.toolbar {
-  position: absolute;
-  text-align: center;
-  top: 35%;
-  left: 69%;
-}
+  .info-container,
+  .payment-container {
+    height: 600px;
+    width: 550px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  }
 
+  .toolbar {
+    position: absolute;
+    text-align: center;
+    left: 150px;
+  }
+
+  .payment-container {
+    position: absolute;
+    left: 56%;
+    top: 25%;
+    background-color: rgba(134,69,67,255) ;
+    color: rgba(230,211,196,255);
+  }
+
+  .submit-btn {
+    position: absolute;
+    top: 90%;
+    left: 48%;
+  }
+
+  .payment-container input {
+    display: block;
+    margin: 20px auto;
+    padding: 8px 100px 8px 8px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+  }
 }
 
 /* Phone CSS */
 
-@media (max-width:425px) {
+@media (max-width: 425px) {
+  .Donate {
+    max-width: 425px;
+    background-color: rgba(134,69,67,255);
+    align-items: center;
+  }
 
-  .options-side {
-  height: 400px;
-  width: 100%;
-  overflow: hidden;
-}
+  .info-side {
+    height: 1200px;
+    
+  }
 
-.options-side {
-  background-color: rgba(0, 0, 0, 0.699);
-  background-size: cover;
-  background-image: url("../../images/students3.jpg");
-  background-blend-mode:hue;
-}
+  .donation-container {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    text-align: center;
+  }
 
-.options-side h1 {
-  position: absolute;
-  text-align: center;
-  top: 15%;
-  left: 6%;
-  color: white;
-}
+  .info-container {
+    position: absolute;
+    width: 400px;
+    top: 100px;
+  }
 
-.info-side {
-  height: 650px;
-  width: 100%;
-  overflow: hidden;
-}
+  .info-container h3 {
+    position: absolute;
+    left: 155px;
+  }
 
-.info-container {
-  position: absolute;
-  color: black;
-  top: 45%;
-  padding: 20px;
-  max-width: 425px;
-}
+  .payment-container h3 {
+    padding: 0 0 20px 60px;
+  }
 
-.donation-container {
-  position: absolute;
-  text-align: center;
-  top: 33%;
-  left: 25%;
-  color: black;
-}
-
-.toolbar {
-  position: absolute;
-  text-align: center;
-  top: 42%;
-  left: 20%;
-}
+  .info-container form {
+    position: absolute;
+    top: 200px;
+  }
 
 
+  .info-container,
+  .payment-container {
+    color: white;
+  }
+
+  .toolbar {
+    position: absolute;
+    left: 65px;
+    top: 50px;
+    text-align: center;
+  }
+
+  .payment-container {
+    position: absolute;
+    top: 600px;
+    left: 60px;
+  }
+
+  .submit-btn {
+    position: absolute;
+    top: 1120px;
+    left: 43%;
+  }
+
+  .payment-container input {
+    display: block;
+    margin: 20px auto;
+    padding: 8px 100px 8px 8px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+  }
 }

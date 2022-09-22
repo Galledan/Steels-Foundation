@@ -1,378 +1,301 @@
 .Home {
-    background: rgb(2,0,36);
-  background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.164) 83%);
+  background: rgb(176,161,147);
+  background: linear-gradient(0deg, rgba(176,161,147,1) 0%, rgba(229,213,199,1) 100%);
 }
 
-@media (min-width:1024px) {
-    
-.carousel {
+@media (min-width: 1024px) {
+  .carousel {
     height: 800px;
     overflow: hidden;
-}
+  }
 
-.carousel-item {
+  .carousel-item {
     background-color: black;
-}
+  }
 
-.carousel-item img {
-   opacity: 0.35;
-}
+  .carousel-item img {
+    opacity: 0.35;
+  }
 
-.carousel-caption {
-    bottom: 700px!important;
-}
+  .carousel-caption {
+    bottom: 700px !important;
+  }
 
-.carousel-caption h1 {
+  .carousel-caption h1 {
     font-size: 70px;
-}
+  }
 
-.carousel-caption p {
+  .carousel-caption p {
     font-size: 30px;
-}
+  }
 
-
-.why-text, .sdg-container {
+  .why-text,
+  .sdg-container {
     height: 500px;
     padding-top: 20px;
-}
+    color: rgba(134,69,67,255) ;
+  }
 
-.why-text h1 {
+  .why-text h1 {
     padding-top: 20px;
     padding-left: 140px;
-}
+  }
 
-.why-text p {
+  .why-text p {
     margin: 50px 1130px 0 200px;
     font-size: 19px;
-}
+  }
 
-.why-text img {
+  .why-text img {
     position: absolute;
     top: 1240px;
     left: 950px;
     border-radius: 8px;
-    width:800px;
-    height:530px;
-}
+    width: 800px;
+    height: 530px;
+  }
 
-.supply-container, .edu-container, .spo-container,.don-container {
+  .supply-container,
+  .edu-container,
+  .spo-container,
+  .don-container {
     height: 500px;
     width: 100%;
-}
+  }
 
-.supply-container{
-    background-image: url('../../images/students2.jpg');
+  .supply-container {
+    background-image: url("../../images/students2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 20%;
     background-color: rgba(0, 0, 0, 0.699);
-    background-blend-mode:hue;
-}
+    background-blend-mode: hue;
+  }
 
-.supply-container p{
-    color: white;
+  .supply-container p {
+    color: rgba(230, 211, 196, 255);
     font-size: 40px;
     text-align: center;
     padding-right: 900px;
     margin-left: 100px;
     padding-top: 140px;
-}
+  }
 
-.supply-container .btn {
+  .supply-container .btn {
     position: absolute;
-    top: 205%;
+    top: 209%;
     left: 75%;
     font-size: 35px;
-    
-}
+  }
 
-.edu-container{
-    background-image: url('../../images/teachers2.jpg');
+  .edu-container {
+    background-image: url("../../images/teachers2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 20%;
     background-color: rgba(138, 138, 138, 0.699);
-    background-blend-mode:hue;
-}
+    background-blend-mode: hue;
+  }
 
-.edu-container p{
-    color: white;
+  .edu-container p {
+    color: rgba(134, 69, 67, 255);
     font-size: 40px;
     text-align: center;
     padding-left: 900px;
     margin-right: 100px;
     padding-top: 140px;
-}
+  }
 
-.edu-container .btn {
+  .edu-container .btn {
     position: absolute;
     top: 260%;
     right: 75%;
     font-size: 35px;
-    
-    
-}
+  }
 
-.spo-container {
+  .spo-container {
     padding-top: 20px;
     text-align: center;
-}
+    color: rgba(134, 69, 67, 255);
+  }
 
-.spo-container img{
+  .spo-container img {
     margin-top: 60px;
-    margin-inline: 40px ;
+    margin-inline: 40px;
     opacity: 75%;
-}
+  }
 
-.spo-container img:hover{
+  .spo-container img:hover {
     opacity: 1;
+  }
 
-}
-
-.don-container{
-    text-align: center;
-    background-image: url('../../images/students5.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 80%;
-    background-color: rgba(0, 0, 0, 0.699);
-    background-blend-mode:hue;
-    color: white;
-}
-
-.don-container ul {
-    position: relative;
-    width: 450px;
-    margin: 50px auto 0;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.don-container ul li {
-    display: flex;
-    background: rgba(255,255,255,1);
-    border-radius: 5px;
-    padding: 10px 110px;
-    color: black;
-    margin: 5px;
-    transition: .5s;
-}
-
-.don-container ul li:hover {
-  background-color: aqua;
-}
-
-.don-container h1 {
-    padding-top: 40px;
-}
-
-.sdg-container img {
+  .sdg-container img {
     position: absolute;
     top: 830px;
     left: 150px;
     border-radius: 8px;
-    width:450px;
-}
+    width: 450px;
+  }
 
-.sdg-container h1 {
+  .sdg-container h1 {
     padding-top: 30px;
     padding-left: 900px;
-}
+  }
 
-
-.sdg-container p {
+  .sdg-container p {
     margin: 50px 200px 0 1030px;
     font-size: 19px;
+  }
 }
-
-}
-
 
 /* Phone CSS*/
 
-@media (max-width:425px){
-body {
+@media (max-width: 425px) {
+  body {
     position: absolute;
     width: 425px;
-}
+  }
 
-.navbar {
+  .navbar {
     width: 425px;
-}
+  }
 
-    .carousel {
-        padding-top: 30px;
-        max-height: 300px;
-        overflow: hidden;
-    }
-    
-    .carousel-item {
-        background-color: black;
-    }
-    
-    .carousel-item img {
-       opacity: 0.35;
-    }
-    
-    .carousel-caption {
-        top: 40px;
-    }
-    
-    .carousel-caption h1 {
-        font-size: 20px;
-    }
-    
-    .carousel-caption p {
-        font-size: 15px;
-    }
+  .carousel {
+    padding-top: 30px;
+    max-height: 300px;
+    overflow: hidden;
+  }
 
-    .carousel-caption .btn {
-        font-size: 15px;
-    }
-      
-    .why-text, .sdg-container {
-        height: 650px;
-    }
-    
-    .why-text h1 {
-        padding-top: 20px;
-        padding-left: 140px;
-        border-bottom: 2px black;
-    }
-    
-    .why-text p {
-        margin-top: 20px;
-        padding-inline: 30px;
-        font-size: 19px;
-    }
-    
-    .why-text img {
-        position: absolute;
-        left: 10px;
-        border-radius: 8px;
-        height: 200px;
-        width: 400px;
-    }
-    
-    .supply-container, .edu-container, .spo-container,.don-container {
-        height: 500px;
-        width: 100%;
-    }
-    
-    .supply-container{
-        background-image: url('../../images/students2.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 0 20%;
-        background-color: rgba(0, 0, 0, 0.699);
-        background-blend-mode:hue;
-    }
-    
-    .supply-container p{
-        padding-top: 60px;
-        color: white;
-        font-size: 30px;
-        text-align: center;
-    }
-    
-    .supply-container .btn {
-        position: absolute;
-        left: 37%;
-        margin-top: 20px;
-        font-size: 25px;
-        
-    }
-    
-    .edu-container{
-        background-image: url('../../images/teachers2.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 0 20%;
-        background-color: rgba(138, 138, 138, 0.699);
-        background-blend-mode:hue;
-    }
-    
-    .edu-container p{
-        padding-top: 60px;
-        color: white;
-        font-size: 30px;
-        text-align: center;
-    }
-    
-    .edu-container .btn {
-        position: absolute;
-        left: 37%;
-        margin-top: 20px;
-        font-size: 25px;      
-    }
-    
-    .spo-container {
-        padding-top: 20px;
-        text-align: center;
-        height: 1200px;
-    }
-    
-    .spo-container img{
-        margin-top: 60px;
-        margin-inline: 40px ;
-        opacity: 1;
-    }
-    
-    .don-container{
-        text-align: center;
-        background-image: url('../../images/students5.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 0 80%;
-        background-color: rgba(0, 0, 0, 0.699);
-        background-blend-mode:hue;
-        color: white;
-    }
-    
-    .don-container ul {
-        position: relative;
-        width: 425px;
-        margin: 50px auto 0;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-    
-    .don-container ul li {
-        display: flex;
-        background: rgba(255,255,255,1);
-        border-radius: 5px;
-        padding: 10px 110px;
-        color: black;
-        margin: 5px;
-        transition: .5s;
-    }
-    
-    .don-container ul li:hover {
-      background-color: aqua;
-    }
-    
-    .don-container h1 {
-        padding-top: 40px;
-    }
+  .carousel-item {
+    background-color: black;
+  }
 
-    .sdg-container img {
-        position: absolute;
-        top: 830px;
-        left: 130px;
-        width:150px;
-    }
-    
-    .sdg-container h1 {
-        padding-top: 30px;
-        padding-left: 80px;
-    }
-    
-    
-    .sdg-container p {
-        margin-top: 20px;
-        padding-inline: 30px;
-        font-size: 19px;
-    }
-    
+  .carousel-item img {
+    opacity: 0.35;
+  }
 
+  .carousel-caption {
+    top: 40px;
+  }
+
+  .carousel-caption h1 {
+    font-size: 20px;
+  }
+
+  .carousel-caption p {
+    font-size: 15px;
+  }
+
+  .carousel-caption .btn {
+    font-size: 15px;
+  }
+
+  .why-text,
+  .sdg-container {
+    height: 650px;
+  }
+
+  .why-text h1 {
+    padding-top: 20px;
+    padding-left: 140px;
+    border-bottom: 2px black;
+  }
+
+  .why-text p {
+    margin-top: 20px;
+    padding-inline: 30px;
+    font-size: 19px;
+  }
+
+  .why-text img {
+    position: absolute;
+    left: 10px;
+    border-radius: 8px;
+    height: 200px;
+    width: 400px;
+  }
+
+  .supply-container,
+  .edu-container,
+  .spo-container,
+  .don-container {
+    height: 500px;
+    width: 100%;
+  }
+
+  .supply-container {
+    background-image: url("../../images/students2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 20%;
+    background-color: rgba(0, 0, 0, 0.699);
+    background-blend-mode: hue;
+  }
+
+  .supply-container p {
+    padding-top: 60px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .supply-container .btn {
+    position: absolute;
+    left: 37%;
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  .edu-container {
+    background-image: url("../../images/teachers2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 20%;
+    background-color: rgba(138, 138, 138, 0.699);
+    background-blend-mode: hue;
+  }
+
+  .edu-container p {
+    padding-top: 60px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .edu-container .btn {
+    position: absolute;
+    left: 37%;
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  .spo-container {
+    padding-top: 20px;
+    text-align: center;
+    height: 1200px;
+  }
+
+  .spo-container img {
+    margin-top: 60px;
+    margin-inline: 40px;
+    opacity: 1;
+  }
+
+  .sdg-container img {
+    position: absolute;
+    top: 830px;
+    left: 130px;
+    width: 150px;
+  }
+
+  .sdg-container h1 {
+    padding-top: 30px;
+    padding-left: 80px;
+  }
+
+  .sdg-container p {
+    margin-top: 20px;
+    padding-inline: 30px;
+    font-size: 19px;
+  }
 }

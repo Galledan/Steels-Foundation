@@ -21,6 +21,7 @@ function Barchart(job) {
           title: {
             text: "Job Chart",
           },
+          colors:['#8d9f73'],
           responsive: [
             {
               breakpoint: 1024,

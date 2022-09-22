@@ -2,6 +2,10 @@
     margin: 13px 0 0 25px;
 }
 
+.nav-link {
+    color: rgba(134, 69, 67, 255)!important;
+}
+
 @media (max-width:450px) {
     .logo{
         width: 200px;

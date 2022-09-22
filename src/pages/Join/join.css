@@ -1,6 +1,6 @@
 .Join {
-    background: rgb(2,0,36);
-    background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 83%);
+    background: rgb(176,161,147);
+    background: linear-gradient(0deg, rgba(176,161,147,1) 0%, rgba(229,213,199,1) 100%);
 }
 
 @media (min-width:1024px){
@@ -11,7 +11,7 @@
     font-size: 50px;
     top: 21%;
     left: 100px;
-    color: rgb(143, 169, 255);
+    color: white ;
 }
 
 .join-container p{
@@ -25,10 +25,10 @@
 
 .form-container {
     position: absolute;
-    color: black;
+    color: rgba(134,69,67,255);
     top: 15%;
     left: 52%;
-    background-color: rgba(255, 255, 255, 0.59);
+    background-color: rgba(230,211,196,0.59);
     border-radius: 5px;
     padding: 20px;
 }
@@ -42,7 +42,7 @@
     content: '';
     height: 3px;
     width: 30px;
-    background: #0573f0;
+    background: rgba(134,69,67,255);
     position: absolute;
     top: 9%;
 left: 3%;
