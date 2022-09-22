@@ -25,10 +25,10 @@
 
 .form-container {
     position: absolute;
-    color: rgba(134,69,67,255);
     top: 15%;
     left: 52%;
     background-color: rgba(230,211,196,0.59);
+    color: rgba(134,69,67,255);
     border-radius: 5px;
     padding: 20px;
 }
@@ -87,7 +87,7 @@ left: 3%;
         left: 40%;
         
         font-size: 20px;
-        color: rgb(143, 169, 255);
+        color: white;
     }
     
     .join-container p{
@@ -102,8 +102,8 @@ left: 3%;
         position: relative;
         padding: 10px 10px 0 10px;
         height: 600px;
-        color: black;
-        background-color: white;
+        background-color: rgba(230,211,196,0.59);
+        color: rgba(134,69,67,255);
         max-width: 425px;
     }
     

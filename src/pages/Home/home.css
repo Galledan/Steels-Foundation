@@ -193,6 +193,7 @@
   .why-text,
   .sdg-container {
     height: 650px;
+    color: rgba(134,69,67,255) ;
   }
 
   .why-text h1 {
@@ -234,7 +235,7 @@
 
   .supply-container p {
     padding-top: 60px;
-    color: white;
+    color: rgba(230, 211, 196, 255);
     font-size: 30px;
     text-align: center;
   }
@@ -257,7 +258,7 @@
 
   .edu-container p {
     padding-top: 60px;
-    color: white;
+    color: rgba(134, 69, 67, 255);
     font-size: 30px;
     text-align: center;
   }
@@ -273,6 +274,7 @@
     padding-top: 20px;
     text-align: center;
     height: 1200px;
+    color: rgba(134, 69, 67, 255);
   }
 
   .spo-container img {

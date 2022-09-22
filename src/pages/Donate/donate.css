@@ -124,7 +124,7 @@
 
   .info-container,
   .payment-container {
-    color: white;
+    color: rgba(230,211,196,255);
   }
 
   .toolbar {
