@@ -481,7 +481,7 @@ function Admin() {
                             <th>{donator.address}</th>
                             <th>{donator.donationType}</th>
                             <th>{donator.donationAmount}</th>
-                            <th>{donator.donationDate}</th>
+                            <th>{donator.donateDate}</th>
                             <td>
                               <Button
                               variant="success"

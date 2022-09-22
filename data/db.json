@@ -95,6 +95,17 @@
       "donationAmount": "5",
       "donateDate": "2022-9-15",
       "id": 3
+    },
+    {
+      "name": "Esma",
+      "surname": "Sarıoğlu",
+      "mail": "asd@asda.com",
+      "number": "02425131014",
+      "address": "asd",
+      "donationType": "Once",
+      "donationAmount": "20",
+      "donateDate": "2022-9-22",
+      "id": 4
     }
   ],
   "admin": [
