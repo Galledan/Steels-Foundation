@@ -4,6 +4,9 @@
 }
 
 @media (min-width: 1024px) {
+  .Home {
+    width: 100%;
+  }
   .carousel {
     height: 800px;
     overflow: hidden;
@@ -83,8 +86,8 @@
 
   .supply-container .btn {
     position: absolute;
-    top:  1000px;
-    left: 75%;
+    top:  2000px;
+    right: 300px;
     font-size: 35px;
   }
 
@@ -108,8 +111,8 @@
 
   .edu-container .btn {
     position: absolute;
-    top: 260%;
-    right: 75%;
+    top: 2500px;
+    left: 300px;
     font-size: 35px;
   }
 
