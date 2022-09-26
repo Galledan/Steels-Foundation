@@ -22,7 +22,15 @@
     
 }
 
+.footer-container a {
+  color: white;
+}
+
 .footer-container li:hover {
+  color: rgba(134, 69, 67, 255);
+}
+
+.footer-container a:hover {
   color: rgba(134, 69, 67, 255);
 }
 
