@@ -3,12 +3,14 @@
   background: linear-gradient(0deg, rgba(176,161,147,1) 0%, rgba(229,213,199,1) 100%);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .Home {
     width: 100%;
   }
   .carousel {
-    height: 800px;
+    max-height: 800px;
+    height: auto;
+    width: 100%;
     overflow: hidden;
   }
 
@@ -21,20 +23,20 @@
   }
 
   .carousel-caption {
-    bottom: 700px !important;
+    bottom: 55% !important;
   }
 
   .carousel-caption h1 {
-    font-size: 70px;
+    font-size: 4vw;
   }
 
   .carousel-caption p {
-    font-size: 30px;
+    font-size: 2vw;
   }
 
   .why-text,
   .sdg-container {
-    height: 500px;
+    height: 45vh;
     padding-top: 20px;
     color: rgba(134,69,67,255) ;
   }
@@ -42,27 +44,33 @@
   .why-text h1 {
     padding-top: 20px;
     padding-left: 140px;
+    height: auto;
+    width: 100%;
+    font-size: 2vw;
   }
 
   .why-text p {
-    margin: 50px 1130px 0 200px;
-    font-size: 19px;
+    margin: 50px 55vw 0 15vh;
+    font-size: 1vw;
+    height: 100%;
+    width: auto;
   }
 
   .why-text img {
-    position: absolute;
-    top: 1240px;
-    left: 950px;
-    border-radius: 8px;
-    width: 800px;
-    height: 530px;
+    position: relative;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    left: 60vw;
+    bottom: 60vh;
   }
 
   .supply-container,
   .edu-container,
   .spo-container,
   .don-container {
-    height: 500px;
+    height: 50vh;
     width: 100%;
   }
 
@@ -77,18 +85,18 @@
 
   .supply-container p {
     color: rgba(230, 211, 196, 255);
-    font-size: 40px;
+    font-size: 4vh;
     text-align: center;
-    padding-right: 900px;
-    margin-left: 100px;
-    padding-top: 140px;
+    padding-right: 40vw;
+    margin-left: 4.5vw;
+    padding-top: 14vh;
   }
 
   .supply-container .btn {
-    position: absolute;
-    top:  2000px;
-    right: 300px;
-    font-size: 35px;
+    position: relative;
+    bottom: 15vh;
+    left: 75vw;
+    font-size: 4vh;
   }
 
   .edu-container {
@@ -102,18 +110,18 @@
 
   .edu-container p {
     color: rgba(134, 69, 67, 255);
-    font-size: 40px;
+    font-size: 4vh;
     text-align: center;
-    padding-left: 900px;
-    margin-right: 100px;
+    padding-left: 40vw;
+    margin-right: 4.5vw;
     padding-top: 140px;
   }
 
   .edu-container .btn {
-    position: absolute;
-    top: 2500px;
-    left: 300px;
-    font-size: 35px;
+    position: relative;
+    bottom: 15vh;
+    left: 15vw;
+    font-size: 4vh;
   }
 
   .spo-container {
@@ -137,17 +145,19 @@
     top: 830px;
     left: 150px;
     border-radius: 8px;
-    width: 450px;
+    width: 25vw;
+    height: auto;
   }
 
   .sdg-container h1 {
     padding-top: 30px;
-    padding-left: 900px;
+    padding-left: 50vw;
+    font-size: 2vw;
   }
 
   .sdg-container p {
-    margin: 50px 200px 0 1030px;
-    font-size: 19px;
+    margin: 50px 10vw 0 60vw;
+    font-size: 1vw;
   }
 }
 

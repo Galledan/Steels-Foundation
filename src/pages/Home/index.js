@@ -61,7 +61,6 @@ function Home() {
         />
       </div>
 
-
       <div className="why-text">
         <h1>{t("Why Quality Education is Important?")}</h1>
         <p>
@@ -98,7 +97,7 @@ function Home() {
         </div>
         <div className="spo-container">
           <h1>{t("Our partners")}</h1>
-          <a href="https://www.mev.org.tr">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.mev.org.tr">
             <img
               src={require("../../images/mev.png")}
               alt="mev"
@@ -106,7 +105,7 @@ function Home() {
               height={200}
             />
           </a>
-          <a href="https://tegv.org">
+          <a target="_blank" rel="noopener noreferrer" href="https://tegv.org">
             <img
               src={require("../../images/tegv.png")}
               alt="tegv"
@@ -114,7 +113,7 @@ function Home() {
               height={200}
             />
           </a>
-          <a href="https://www.tev.org.tr/anasayfa/tr">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.tev.org.tr/anasayfa/tr">
             <img
               src={require("../../images/tev.png")}
               alt="tev"
@@ -122,7 +121,7 @@ function Home() {
               height={200}
             />
           </a>
-          <a href="https://www.kizilay.org.tr">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.kizilay.org.tr">
             <img
               src={require("../../images/Türk_Kızılay_logo.png")}
               alt="tk"
