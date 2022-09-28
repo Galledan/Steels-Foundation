@@ -3,7 +3,7 @@
     color: rgba(230, 211, 196, 255)!important;
 }
 
-.main-container h3 {
+.welcome-text {
     color: rgba(134,69,67,255);
 }
 
@@ -27,11 +27,14 @@ position: absolute;
 left: 48%;
 }
 
-
+.admin-user {
+    display: flex;
+}
 
 .volunteer-container .table-responsive {
     max-width: 750px;
     max-height: 600px;
+
 }
 
 .volunteer-container .table-responsive th {
@@ -165,11 +168,6 @@ left: 48%;
     padding-top: 50px;
 }
 
-.logout {
- position: absolute;
- top: 12%;
- left: 4%;
-}
 
 }
 

@@ -97,6 +97,9 @@ function Home() {
         </div>
         <div className="spo-container">
           <h1>{t("Our partners")}</h1>
+          <div className="spo-images">
+            
+         
           <a target="_blank" rel="noopener noreferrer" href="https://www.mev.org.tr">
             <img
               src={require("../../images/mev.png")}
@@ -129,6 +132,7 @@ function Home() {
               height={200}
             />
           </a>
+          </div>
         </div>
       </div>
 

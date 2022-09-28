@@ -125,9 +125,13 @@ function Donate() {
   const donate = useRef();
 
   const [show, setShow] = useState(false);
+  const [payShow, setPayShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handlePayClose = () => setPayShow(false)
+  const handlePayShow = () => setPayShow(true)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -160,6 +164,8 @@ function Donate() {
           donate.current,
           "vfIYz4eqhWMQv2r60"
         );
+
+        handlePayShow()
       }
     }
   };
@@ -171,6 +177,12 @@ function Donate() {
           <Modal.Title>Invalid Payment</Modal.Title>
         </Modal.Header>
         <Modal.Body>Check your Payment inputs something is wrong!</Modal.Body>
+      </Modal>
+      <Modal show={payShow} onHide={handlePayClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Thanks for your donation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>You will receive a mail about your donation</Modal.Body>
       </Modal>
       <div className="info-side">
         <div className="info-container">

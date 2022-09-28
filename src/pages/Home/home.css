@@ -125,9 +125,18 @@
   }
 
   .spo-container {
-    padding-top: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
     color: rgba(134, 69, 67, 255);
+  }
+
+  .spo-container h1{
+    width: 25%;
   }
 
   .spo-container img {

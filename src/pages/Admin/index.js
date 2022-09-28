@@ -236,8 +236,10 @@ function Admin() {
           >
             <Tab eventKey="main" title="Main">
               <div className="main-container">
-                <h3>Welcome {username}</h3>
+                <div className="admin-user">
+                <h3 className="welcome-text">Welcome {username}</h3>
                 <Button className="logout" variant="success" onClick={onLogout}>Log Out</Button>
+                </div>
                 <div className="total donation">
                   <p>Total Donation Revenue</p>
                   <span>{onceDonation() + monthlyDonation()} $</span>

@@ -18,7 +18,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <Navbar bg="dark" expand='sm' variant="dark" fixed="top">
+    <Navbar bg="light" expand='sm'  fixed="top">
       <Container>
         <Navbar.Brand href="/">
           <img className="logo" src={require("../../images/logo.png")} alt="logo" width={300} />
