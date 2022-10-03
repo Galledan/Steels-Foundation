@@ -126,7 +126,7 @@
 
   .spo-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -135,9 +135,6 @@
     color: rgba(134, 69, 67, 255);
   }
 
-  .spo-container h1{
-    width: 25%;
-  }
 
   .spo-container img {
     margin-top: 60px;

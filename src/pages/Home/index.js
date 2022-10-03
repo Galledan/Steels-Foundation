@@ -100,20 +100,20 @@ function Home() {
           <div className="spo-images">
             
          
-          <a target="_blank" rel="noopener noreferrer" href="https://www.mev.org.tr">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.iefg.org">
             <img
-              src={require("../../images/mev.png")}
+              src={require("../../images/iefg.png")}
               alt="mev"
-              width={200}
-              height={200}
+              width={300}
+              height={100}
             />
           </a>
           <a target="_blank" rel="noopener noreferrer" href="https://tegv.org">
             <img
-              src={require("../../images/tegv.png")}
+              src={require("../../images/gpe.png")}
               alt="tegv"
-              width={300}
-              height={200}
+              width={400}
+              height={100}
             />
           </a>
           <a target="_blank" rel="noopener noreferrer" href="https://www.tev.org.tr/anasayfa/tr">
