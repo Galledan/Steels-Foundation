@@ -10,4 +10,4 @@ Never before have so many children been out of school at the same time, disrupti
 
 This project's goal is to create a donation website for children who cannot get quality education by using React and Bootstrap library
 
-https://github.com/Galledan/Steels-Foundation
+https://steels-foundation.netlify.app
